@@ -25,11 +25,10 @@
         </div>
       </div>
     
-      <form *ngIf="!loggedIn()" #loginForm="ngForm" class="form-inline my-2 my-md-0" (ngSubmit)="login()">
-        <input class="form-control mr-2" type="text" name="username" placeholder="Username" required [(ngModel)]="model.username">
-        <input class="form-control" type="password" name="password" placeholder="Password" required [(ngModel)]="model.password">
-        <button [disabled]="!loginForm.valid" class="btn btn-success my-2 my-md-0" type="submit">Login</button>
-      </form>
+      <div *ngIf="!loggedIn()">
+        <a class="nav-item" [routerLink]="['/login']" routerLinkActive="router-link-active" >Login</a>
+      </div>
+      
   </div>
   
 </nav>

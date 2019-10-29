@@ -1,0 +1,41 @@
+[
+  {
+    "Username": "Nils",
+    "Birthdate": "1995-05-10",
+    "Password": "password"
+  },
+  {
+    "Username": "John",
+    "Birthdate": "1992-10-02",
+    "Password": "password",
+    "Adverts": [
+      {
+        "Title": "Almost new Volkswagen Golf for sale",
+        "Description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec varius ultrices libero, ac vestibulum felis finibus et. Aenean eu metus libero.",
+        "Location": "882 Bouck Court, Austinburg, Maryland, 5174",
+        "Price": "150000",
+        "Make": "Volkswagen",
+        "Model": "Golf",
+        "Trim": "TDI",
+        "ModelYear": "2014",
+        "Colour": "Black",
+        "SeatNumber": "5",
+        "FuelType": "Diesel",
+        "HorsePower": "124",
+        "Weight": "1545",
+        "TransmissionType": "Manual",
+        "DriveType": "FWD",
+        "BodyStyle": "5-Door Hatchback",
+        "Mileage": "76990",
+        "Registernumber": "VW22063",
+        "Photos": [
+          {
+            "Url": "https://cdn.pixabay.com/photo/2019/07/12/12/49/vw-4332807_960_720.jpg",
+            "IsMain": true,
+            "description": "A description"
+          }
+        ]
+      }
+    ]
+  }
+]
