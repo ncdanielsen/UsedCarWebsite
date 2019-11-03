@@ -37,5 +37,209 @@
         ]
       }
     ]
+  },
+  {
+    "Username": "User3",
+    "Birthdate": "1992-10-02",
+    "Password": "password",
+    "Adverts": [
+      {
+        "Title": "A car for sale",
+        "Description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec varius ultrices libero, ac vestibulum felis finibus et. Aenean eu metus libero.",
+        "Location": "An address",
+        "Price": "100000",
+        "Make": "BMW",
+        "Model": "3",
+        "Trim": "320i",
+        "ModelYear": "2013",
+        "Colour": "Blue",
+        "SeatNumber": "5",
+        "FuelType": "Petrol",
+        "HorsePower": "170",
+        "Weight": "1545",
+        "TransmissionType": "Manual",
+        "DriveType": "RWD",
+        "BodyStyle": "Coupe",
+        "Mileage": "126990",
+        "Registernumber": "MW39013",
+        "Photos": [
+          {
+            "Url": "https://cdn.pixabay.com/photo/2015/05/15/14/46/bmw-768688_960_720.jpg",
+            "IsMain": true,
+            "description": "A description"
+          }
+        ]
+      },
+      {
+        "Title": "Yet another car for sale",
+        "Description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec varius ultrices libero, ac vestibulum felis finibus et. Aenean eu metus libero.",
+        "Location": "882 Bouck Court, Austinburg, Maryland, 5174",
+        "Price": "650000",
+        "Make": "Ford",
+        "Model": "Mustang",
+        "Trim": "",
+        "ModelYear": "2016",
+        "Colour": "White",
+        "SeatNumber": "2",
+        "FuelType": "Petrol",
+        "HorsePower": "350",
+        "Weight": "1745",
+        "TransmissionType": "Manual",
+        "DriveType": "RWD",
+        "BodyStyle": "Coupe",
+        "Mileage": "45670",
+        "Registernumber": "FD73358",
+        "Photos": [
+          {
+            "Url": "https://cdn.pixabay.com/photo/2015/12/08/00/28/car-1081742_960_720.jpg",
+            "IsMain": true,
+            "description": "A description"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "Username": "Tim",
+    "Birthdate": "1992-10-02",
+    "Password": "password",
+    "Adverts": [
+      {
+        "Title": "Nice condition toyota corolla. Only serious callers, only accepting cash or bitcoin",
+        "Description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec varius ultrices libero, ac vestibulum felis finibus et. Aenean eu metus libero.",
+        "Location": "882 Bouck Court, Austinburg, Maryland, 5174",
+        "Price": "35000",
+        "Make": "Toyota",
+        "Model": "Corolla",
+        "Trim": "",
+        "ModelYear": "1998",
+        "Colour": "Silver",
+        "SeatNumber": "5",
+        "FuelType": "Petrol",
+        "HorsePower": "80",
+        "Weight": "1120",
+        "TransmissionType": "Manual",
+        "DriveType": "FWD",
+        "BodyStyle": "5-Door Sedan",
+        "Mileage": "176990",
+        "Registernumber": "CO16863",
+        "Photos": [
+          {
+            "Url": "https://image-cdn.beforward.jp/large/201808/1039626/BF948723_470856.jpg",
+            "IsMain": true,
+            "description": "A description"
+          }
+        ]
+      },
+      {
+        "Title": "Nice condition toyota corolla. Only serious callers, only accepting cash or bitcoin",
+        "Description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec varius ultrices libero, ac vestibulum felis finibus et. Aenean eu metus libero.",
+        "Location": "882 Bouck Court, Austinburg, Maryland, 5174",
+        "Price": "35000",
+        "Make": "Toyota",
+        "Model": "Corolla",
+        "Trim": "",
+        "ModelYear": "1998",
+        "Colour": "Silver",
+        "SeatNumber": "5",
+        "FuelType": "Petrol",
+        "HorsePower": "80",
+        "Weight": "1120",
+        "TransmissionType": "Manual",
+        "DriveType": "FWD",
+        "BodyStyle": "5-Door Sedan",
+        "Mileage": "176990",
+        "Registernumber": "CO16863",
+        "Photos": [
+          {
+            "Url": "https://image-cdn.beforward.jp/large/201808/1039626/BF948723_470856.jpg",
+            "IsMain": true,
+            "description": "A description"
+          }
+        ]
+      },
+      {
+        "Title": "Nice condition toyota corolla. Only serious callers, only accepting cash or bitcoin",
+        "Description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec varius ultrices libero, ac vestibulum felis finibus et. Aenean eu metus libero.",
+        "Location": "882 Bouck Court, Austinburg, Maryland, 5174",
+        "Price": "35000",
+        "Make": "Toyota",
+        "Model": "Corolla",
+        "Trim": "",
+        "ModelYear": "1998",
+        "Colour": "Silver",
+        "SeatNumber": "5",
+        "FuelType": "Petrol",
+        "HorsePower": "80",
+        "Weight": "1120",
+        "TransmissionType": "Manual",
+        "DriveType": "FWD",
+        "BodyStyle": "5-Door Sedan",
+        "Mileage": "176990",
+        "Registernumber": "CO16863",
+        "Photos": [
+          {
+            "Url": "https://image-cdn.beforward.jp/large/201808/1039626/BF948723_470856.jpg",
+            "IsMain": true,
+            "description": "A description"
+          }
+        ]
+      },
+      {
+        "Title": "Nice condition toyota corolla. Only serious callers, only accepting cash or bitcoin",
+        "Description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec varius ultrices libero, ac vestibulum felis finibus et. Aenean eu metus libero.",
+        "Location": "882 Bouck Court, Austinburg, Maryland, 5174",
+        "Price": "35000",
+        "Make": "Toyota",
+        "Model": "Corolla",
+        "Trim": "",
+        "ModelYear": "1998",
+        "Colour": "Silver",
+        "SeatNumber": "5",
+        "FuelType": "Petrol",
+        "HorsePower": "80",
+        "Weight": "1120",
+        "TransmissionType": "Manual",
+        "DriveType": "FWD",
+        "BodyStyle": "5-Door Sedan",
+        "Mileage": "176990",
+        "Registernumber": "CO16863",
+        "Photos": [
+          {
+            "Url": "https://image-cdn.beforward.jp/large/201808/1039626/BF948723_470856.jpg",
+            "IsMain": true,
+            "description": "A description"
+          }
+        ]
+      },
+      {
+        "Title": "Nice condition toyota corolla. Only serious callers, only accepting cash or bitcoin",
+        "Description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec varius ultrices libero, ac vestibulum felis finibus et. Aenean eu metus libero.",
+        "Location": "882 Bouck Court, Austinburg, Maryland, 5174",
+        "Price": "35000",
+        "Make": "Toyota",
+        "Model": "Corolla",
+        "Trim": "",
+        "ModelYear": "1998",
+        "Colour": "Silver",
+        "SeatNumber": "5",
+        "FuelType": "Petrol",
+        "HorsePower": "80",
+        "Weight": "1120",
+        "TransmissionType": "Manual",
+        "DriveType": "FWD",
+        "BodyStyle": "5-Door Sedan",
+        "Mileage": "176990",
+        "Registernumber": "CO16863",
+        "Photos": [
+          {
+            "Url": "https://image-cdn.beforward.jp/large/201808/1039626/BF948723_470856.jpg",
+            "IsMain": true,
+            "description": "A description"
+          }
+        ]
+      }
+    ]
   }
+
 ]

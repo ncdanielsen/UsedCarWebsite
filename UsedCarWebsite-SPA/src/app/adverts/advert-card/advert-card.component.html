@@ -1,0 +1,19 @@
+<div class="card mb-3" [routerLink]="['/adverts/', advert.id]">
+  <div class="row no-gutters">
+    <div class="col-md-4">
+        <img id="thumbnail" class="card-img" src="{{advert.photoUrl}}" alt="">
+    </div>
+    <div class="col-md-8">
+      <div class="card-body">
+        <h5 class="card-title mb-2">{{advert.title}}</h5>
+        <p class="card-text text-muted">{{advert.modelYear}} {{advert.make}} {{advert.model}} {{advert.trim}}</p>
+        <div class="d-flex justify-content-between">
+          <p class="card-text">{{advert.colour}}</p>
+          <p class="card-text">{{advert.mileage}} Km</p>
+          <p class="card-text">{{advert.price}} kr</p>
+        </div>
+        <p class="card-text"><small class="text-muted">{{advert.location}}</small></p>
+      </div>
+    </div>
+  </div>
+</div>

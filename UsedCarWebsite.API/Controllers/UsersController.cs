@@ -1,4 +1,5 @@
 ﻿using AutoMapper;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using System;
 using System.Collections.Generic;
@@ -11,21 +12,23 @@ namespace UsedCarWebsite.API.Controllers
 {
     [Route("api/[controller]")]
     [ApiController]
+    //[Authorize]
     public class UsersController : ControllerBase
     {
-        private readonly IMainRepository repo;
-        private readonly IMapper mapper;
+        private readonly IMainRepository _repo;
+        private readonly IMapper _mapper;
         public UsersController(IMainRepository repo, IMapper mapper)
         {
-            this.repo = repo;
-            this.mapper = mapper;
+            _repo = repo;
+            _mapper = mapper;
         }
 
         [HttpGet]
+        [AllowAnonymous]
         public async Task<IActionResult> GetUsers()
         {
-            var users = await repo.GetUsers();
-            var usersToReturn = mapper.Map<IEnumerable<UserForListDto>>(users);
+            var users = await _repo.GetUsers();
+            var usersToReturn = _mapper.Map<IEnumerable<UserForListDto>>(users);
 
             return Ok(usersToReturn);
         }
@@ -33,8 +36,8 @@ namespace UsedCarWebsite.API.Controllers
         [HttpGet("{id}")]
         public async Task<IActionResult> GetUser(int id)
         {
-            var user = await repo.GetUser(id);
-            var userToReturn = mapper.Map<UserForDetailedDto>(user);
+            var user = await _repo.GetUser(id);
+            var userToReturn = _mapper.Map<UserForDetailedDto>(user);
 
             return Ok(userToReturn);
         }

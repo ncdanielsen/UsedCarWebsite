@@ -32,13 +32,22 @@ namespace UsedCarWebsite.API
 
         public IConfiguration Configuration { get; }
 
+        private readonly string _allowEveryOrigin = "allowSpecificOrigins";
+
         // This method gets called by the runtime. Use this method to add services to the container.
         public void ConfigureServices(IServiceCollection services)
         {
-            //services.AddMvc().SetCompatibilityVersion(CompatibilityVersion.Version_3_0);
             services.AddDbContext<DataContext>(x => x.UseSqlite(Configuration.GetConnectionString("DefaultConnection")));
             services.AddControllers();
-            services.AddCors();
+            services.AddCors(options =>
+            {
+                options.AddPolicy(_allowEveryOrigin,
+                builder =>
+                {
+                    builder.AllowAnyOrigin().AllowAnyHeader().AllowAnyMethod();
+                });
+            });
+            services.AddMvc().SetCompatibilityVersion(CompatibilityVersion.Version_3_0);
             services.AddAutoMapper(typeof(MainRepository).Assembly);
             services.AddScoped<IAuthRepository, AuthRepository>();
             services.AddScoped<IMainRepository, MainRepository>(); 
@@ -79,12 +88,12 @@ namespace UsedCarWebsite.API
 
             //app.UseHttpsRedirection();
 
-            app.UseCors(x => x.AllowAnyOrigin().AllowAnyMethod().AllowAnyHeader());
             app.UseAuthentication();
+            app.UseRouting();
+            app.UseCors(_allowEveryOrigin);
 
             //app.UseMvc();
 
-            app.UseRouting();
             app.UseAuthorization();
 
             app.UseEndpoints(endpoints =>
