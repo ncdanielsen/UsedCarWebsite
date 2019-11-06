@@ -9,7 +9,7 @@ namespace UsedCarWebsite.API.Dtos
     public class AdvertForDetailedDto
     {
         public int Id { get; set; }
-        public User User { get; set; }
+        public UserForListDto User { get; set; }
         public int UserId { get; set; }
         public string Title { get; set; }
         public string Description { get; set; }

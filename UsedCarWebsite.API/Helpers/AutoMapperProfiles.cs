@@ -12,15 +12,18 @@ namespace UsedCarWebsite.API.Helpers
     {
         public AutoMapperProfiles()
         {
-            CreateMap<User, UserForListDto>();
-            CreateMap<User, UserForDetailedDto>();
             CreateMap<Advert, AdvertForListDto>()
                 .ForMember(dest => dest.PhotoUrl, opt => 
-                    opt.MapFrom(src => src.Photos.FirstOrDefault(p => p.IsMain).Url));
+                    opt.MapFrom(src => src.Photos.FirstOrDefault(p => p.IsMain).Url))
+                .ForMember(dest => dest.PostedByUser, opt =>
+                    opt.MapFrom(src => src.User.Username));
             CreateMap<Advert, AdvertForDetailedDto>()
                 .ForMember(dest => dest.PhotoUrl, opt =>
                     opt.MapFrom(src => src.Photos.FirstOrDefault(p => p.IsMain).Url));
+            CreateMap<User, UserForListDto>();
+            CreateMap<User, UserForDetailedDto>();
             CreateMap<Photo, PhotosForDetailedDto>();
+            CreateMap<UserForUpdateDto, User>();
         }
     }
 }

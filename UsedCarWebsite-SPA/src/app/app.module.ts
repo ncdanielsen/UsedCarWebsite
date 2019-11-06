@@ -25,6 +25,14 @@ import { AdvertService } from './_services/advert.service';
 import { AdvertDetailResolver } from './_resolver/advert-detail.resolver';
 import { AuthGuard } from './_guards/auth.guard';
 import { ListCarsResolver } from './_resolver/list-cars.resolver';
+import { UserDetailComponent } from './user/user-detail/user-detail.component';
+import { UserEditComponent } from './user/user-edit/user-edit.component';
+import { UserProfileComponent } from './user/user-profile/user-profile.component';
+import { UserProfileResolver } from './_resolver/user-profile.resolver';
+import { UserDetailResolver } from './_resolver/user-detail.resolver';
+import { CompactAdvertCardComponent } from './adverts/compact-advert-card/compact-advert-card.component';
+import { AdvertEditComponent } from './adverts/advert-edit/advert-edit.component';
+import { PreventUnsavedChanges } from './_guards/prevent-unsaved-changes.guard';
 
 export function tokenGetter() {
    return localStorage.getItem('token');
@@ -52,7 +60,12 @@ export class CustomHammerConfig extends HammerGestureConfig {
       NewAdComponent,
       LoginComponent,
       AdvertCardComponent,
-      AdvertDetailComponent
+      AdvertDetailComponent,
+      UserDetailComponent,
+      UserEditComponent,
+      UserProfileComponent,
+      CompactAdvertCardComponent,
+      AdvertEditComponent
    ],
    imports: [
       BrowserModule,
@@ -76,8 +89,11 @@ export class CustomHammerConfig extends HammerGestureConfig {
       ErrorInterceptorProvider,
       AdvertService,
       AuthGuard,
+      PreventUnsavedChanges,
       AdvertDetailResolver,
       ListCarsResolver,
+      UserProfileResolver,
+      UserDetailResolver,
       { provide: HAMMER_GESTURE_CONFIG, useClass: CustomHammerConfig}
    ],
    bootstrap: [

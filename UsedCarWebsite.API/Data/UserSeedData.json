@@ -2,12 +2,18 @@
   {
     "Username": "Nils",
     "Birthdate": "1995-05-10",
-    "Password": "password"
+    "Password": "password",
+    "Email": "example@email.com",
+    "Gender": "Male",
+    "Address": "Example Address"
   },
   {
     "Username": "John",
     "Birthdate": "1992-10-02",
     "Password": "password",
+    "Email": "example@email.com",
+    "Gender": "Male",
+    "Address": "Example Address",
     "Adverts": [
       {
         "Title": "Almost new Volkswagen Golf for sale",
@@ -42,6 +48,9 @@
     "Username": "User3",
     "Birthdate": "1992-10-02",
     "Password": "password",
+    "Email": "example@email.com",
+    "Gender": "Female",
+    "Address": "Example Address",
     "Adverts": [
       {
         "Title": "A car for sale",
@@ -103,6 +112,9 @@
     "Username": "Tim",
     "Birthdate": "1992-10-02",
     "Password": "password",
+    "Email": "example@email.com",
+    "Gender": "Male",
+    "Address": "Example Address",
     "Adverts": [
       {
         "Title": "Nice condition toyota corolla. Only serious callers, only accepting cash or bitcoin",

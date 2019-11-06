@@ -28,21 +28,21 @@ namespace UsedCarWebsite.API.Data
 
         public async Task<Advert> GetAdvert(int id)
         {
-            var advert = await context.Adverts.Include(p => p.Photos).FirstOrDefaultAsync(a => a.Id == id);
+            var advert = await context.Adverts.Include(p => p.Photos).Include(u => u.User).FirstOrDefaultAsync(a => a.Id == id);
 
             return advert;
         }
 
         public async Task<IEnumerable<Advert>> GetAdverts()
         {
-            var adverts = await context.Adverts.Include(p => p.Photos).ToListAsync();
+            var adverts = await context.Adverts.Include(p => p.Photos).Include(u => u.User).ToListAsync();
 
             return adverts;
         }
 
         public async Task<User> GetUser(int id)
         {
-            var user = await context.Users.FirstOrDefaultAsync(u => u.Id == id);
+            var user = await context.Users.Include(a => a.Adverts).FirstOrDefaultAsync(u => u.Id == id);
 
             return user;
         }
