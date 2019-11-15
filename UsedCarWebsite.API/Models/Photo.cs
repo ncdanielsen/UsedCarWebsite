@@ -9,6 +9,7 @@ namespace UsedCarWebsite.API.Models
         public string Description { get; set; }
         public DateTime DateAdded { get; set; }
         public Boolean IsMain { get; set; }
+        public string PublicId { get; set; }
         public Advert Advert { get; set; }
         public int AdvertId { get; set; }
 

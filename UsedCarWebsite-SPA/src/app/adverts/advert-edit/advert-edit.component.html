@@ -1,3 +1,79 @@
-<p>
-  advert-edit works!
-</p>
+<div id="formContainer" class="container mt-3 mb-3">
+  <h2>Edit Advert</h2>
+  <form id="advertEditForm" #advertEditForm="ngForm" (ngSubmit)="updateAdvert()">
+    <div class="form-group">
+      <label for="registerNumber">Registration Number: </label>
+      <input class="form-control" type="text" name="registerNumber" [(ngModel)]="advert.registerNumber">
+    </div>
+    <div class="form-group">
+      <label for="make">Make:</label>
+      <input class="form-control" type="text" name="make" [(ngModel)]="advert.make">
+    </div>
+    <div class="form-group">
+      <label for="model">Model:</label>
+      <input class="form-control" type="text" name="model" [(ngModel)]="advert.model">
+    </div>
+    <div class="form-group">
+      <label for="trim">Trim:</label>
+      <input class="form-control" type="text" name="trim" [(ngModel)]="advert.trim">
+    </div>
+    <h3>Divider</h3>
+    <app-photo-editor [photos]="advert.photos" [advertId]="advert.id"></app-photo-editor>
+    <h3>Divider</h3>
+    <div class="form-group">
+      <label for="transmission">Transmission Type:</label>
+      <input class="form-control" type="text" name="transmission" [(ngModel)]="advert.transmissionType">
+    </div>
+    <div class="form-group">
+      <label for="drive">Drive Type:</label>
+      <input class="form-control" type="text" name="drive" [(ngModel)]="advert.driveType">
+    </div>
+    <div class="form-group">
+      <label for="fuel">Fuel Type:</label>
+      <input class="form-control" type="text" name="fuel" [(ngModel)]="advert.fuelType">
+    </div>
+    <div class="form-group">
+      <label for="horsepower">Horsepower:</label>
+      <input class="form-control" type="text" name="horsepower" [(ngModel)]="advert.horsePower">
+    </div>
+    <h3>Divider</h3>
+    <div class="form-group">
+      <label for="colour">Colour:</label>
+      <input class="form-control" type="text" name="colour" [(ngModel)]="advert.colour">
+    </div>
+    <div class="form-group">
+      <label for="bodyStyle">Body Style:</label>
+      <input class="form-control" type="text" name="bodyStyle" [(ngModel)]="advert.bodyStyle">
+    </div>
+    <div class="form-group">
+      <label for="seats">Number of Seats:</label>
+      <input class="form-control" type="text" name="seats" [(ngModel)]="advert.seatNumber">
+    </div>
+    <div class="form-group">
+        <label for="weigth">Weigth:</label>
+        <input class="form-control" type="text" name="weight" [(ngModel)]="advert.weigth">
+    </div>
+    <h3>Divider</h3>
+    <div class="form-group">
+      <label for="title">Title:</label>
+      <input class="form-control" type="text" name="title" [(ngModel)]="advert.title">
+    </div>
+    <div class="form-group">
+        <label for="description">Description:</label>
+        <textarea class="form-control" rows="8" name="description" [(ngModel)]="advert.description"></textarea>
+    </div>
+    <div class="form-group">
+        <label for="location">Location:</label>
+        <input class="form-control" type="text" name="location" [(ngModel)]="advert.location">
+    </div>
+    <div class="form-group">
+        <label for="mileage">Mileage:</label>
+        <input class="form-control" type="text" name="mileage" [(ngModel)]="advert.mileage">
+    </div>
+    <div class="form-group">
+        <label for="price">Price:</label>
+        <input class="form-control" type="text" name="price" [(ngModel)]="advert.price">
+    </div>
+    <button form="advertEditForm" class="btn btn-success w-100 mt-3 mb-4" [disabled]="!advertEditForm.dirty">Save Changes</button>
+  </form>
+</div>

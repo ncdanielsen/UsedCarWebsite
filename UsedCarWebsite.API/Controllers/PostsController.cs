@@ -3,6 +3,7 @@ using Microsoft.AspNetCore.Mvc;
 using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Security.Claims;
 using System.Threading.Tasks;
 using UsedCarWebsite.API.Data;
 using UsedCarWebsite.API.Dtos;
@@ -38,6 +39,22 @@ namespace UsedCarWebsite.API.Controllers
             var postToReturn = _mapper.Map<AdvertForDetailedDto>(user);
 
             return Ok(postToReturn);
+        }
+
+        [HttpPut("{id}")]
+        public async Task<IActionResult> UpdatePost(int advertId, AdvertForUpdateDto advertForUpdateDto)
+        {
+            var advertFromRepo = await _repo.GetAdvert(advertId);
+
+            if (advertFromRepo.UserId != int.Parse(User.FindFirst(ClaimTypes.NameIdentifier).Value))
+                return Unauthorized();
+
+            _mapper.Map(advertForUpdateDto, advertFromRepo);
+
+            if (await _repo.SaveAll())
+                return NoContent();
+
+            throw new Exception($"Updating advert {advertId} failed on save");
         }
     }
 }

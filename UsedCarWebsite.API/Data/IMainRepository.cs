@@ -15,5 +15,8 @@ namespace UsedCarWebsite.API.Data
         Task<User> GetUser(int id);
         Task<IEnumerable<Advert>> GetAdverts();
         Task<Advert> GetAdvert(int id);
+        Task<Photo> GetPhoto(int id);
+
+        Task<Photo> GetMainPhotoForAdvert(int advertId);
     }
 }

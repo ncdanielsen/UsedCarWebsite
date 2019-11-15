@@ -14,7 +14,8 @@ import { UserEditComponent } from './user/user-edit/user-edit.component';
 import { UserProfileComponent } from './user/user-profile/user-profile.component';
 import { UserDetailResolver } from './_resolver/user-detail.resolver';
 import { AdvertEditComponent } from './adverts/advert-edit/advert-edit.component';
-import { PreventUnsavedChanges } from './_guards/prevent-unsaved-changes.guard';
+import { UserPreventUnsavedChanges } from './_guards/user-prevent-unsaved-changes.guard';
+import { AdvertPreventUnsavedChanges } from './_guards/advert-prevent-unsaved-changes.guard';
 
 export const appRoutes: Routes = [
     {path: 'home', component: HomeComponent},
@@ -25,9 +26,9 @@ export const appRoutes: Routes = [
         children: [
             {path: 'user', component: UserDetailComponent, resolve: {user: UserDetailResolver}},
             {path: 'user/edit', component: UserEditComponent,
-            resolve: {user: UserDetailResolver}, canDeactivate: [PreventUnsavedChanges]},
-            {path: 'adverts/edit/:id', component: AdvertEditComponent, resolve: {adverts: AdvertDetailResolver},
-            canDeactivate: [PreventUnsavedChanges]},
+            resolve: {user: UserDetailResolver}, canDeactivate: [UserPreventUnsavedChanges]},
+            {path: 'adverts/edit/:id', component: AdvertEditComponent, resolve: {advert: AdvertDetailResolver},
+            canDeactivate: [AdvertPreventUnsavedChanges]},
             {path: 'new-ad', component: NewAdComponent},
             {path: 'messages', component: MessagesComponent},
         ]

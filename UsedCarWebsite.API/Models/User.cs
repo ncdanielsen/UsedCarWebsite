@@ -16,7 +16,7 @@ namespace UsedCarWebsite.API.Models
         public string Address { get; set; }
         public DateTime Birthdate { get; set; }
         public ICollection<Advert> Adverts { get; set; }
-
+        //public Photo UserPhoto { get; set; }
 
     }
 }

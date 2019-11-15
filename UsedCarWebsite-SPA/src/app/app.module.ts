@@ -7,6 +7,7 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { RouterModule } from '@angular/router';
 import { JwtModule } from '@auth0/angular-jwt';
 import { NgxGalleryModule } from 'ngx-gallery';
+import { FileUploadModule } from 'ng2-file-upload';
 
 import { AppComponent } from './app.component';
 import { NavComponent } from './nav/nav.component';
@@ -32,7 +33,9 @@ import { UserProfileResolver } from './_resolver/user-profile.resolver';
 import { UserDetailResolver } from './_resolver/user-detail.resolver';
 import { CompactAdvertCardComponent } from './adverts/compact-advert-card/compact-advert-card.component';
 import { AdvertEditComponent } from './adverts/advert-edit/advert-edit.component';
-import { PreventUnsavedChanges } from './_guards/prevent-unsaved-changes.guard';
+import { UserPreventUnsavedChanges} from './_guards/user-prevent-unsaved-changes.guard';
+import { AdvertPreventUnsavedChanges } from './_guards/advert-prevent-unsaved-changes.guard';
+import { PhotoEditorComponent } from './adverts/photo-editor/photo-editor.component';
 
 export function tokenGetter() {
    return localStorage.getItem('token');
@@ -65,7 +68,8 @@ export class CustomHammerConfig extends HammerGestureConfig {
       UserEditComponent,
       UserProfileComponent,
       CompactAdvertCardComponent,
-      AdvertEditComponent
+      AdvertEditComponent,
+      PhotoEditorComponent
    ],
    imports: [
       BrowserModule,
@@ -76,6 +80,7 @@ export class CustomHammerConfig extends HammerGestureConfig {
       BsDropdownModule.forRoot(),
       RouterModule.forRoot(appRoutes),
       NgxGalleryModule,
+      FileUploadModule,
       JwtModule.forRoot({
          config: {
             tokenGetter,
@@ -89,7 +94,8 @@ export class CustomHammerConfig extends HammerGestureConfig {
       ErrorInterceptorProvider,
       AdvertService,
       AuthGuard,
-      PreventUnsavedChanges,
+      UserPreventUnsavedChanges,
+      AdvertPreventUnsavedChanges,
       AdvertDetailResolver,
       ListCarsResolver,
       UserProfileResolver,
