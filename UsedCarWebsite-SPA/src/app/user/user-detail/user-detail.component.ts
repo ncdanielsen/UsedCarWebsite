@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { ActivatedRoute } from '@angular/router';
+import { ActivatedRoute, Router } from '@angular/router';
 import { User } from 'src/app/_models/User';
 import { UserService } from 'src/app/_services/user.service';
 import { Advert } from 'src/app/_models/Advert';
@@ -13,7 +13,7 @@ export class UserDetailComponent implements OnInit {
   user: User;
   adverts: Advert[];
 
-  constructor(private userService: UserService, private route: ActivatedRoute) { }
+  constructor(private userService: UserService, private route: ActivatedRoute, private router: Router) { }
 
   ngOnInit() {
     this.route.data.subscribe(data => {
@@ -21,6 +21,10 @@ export class UserDetailComponent implements OnInit {
     });
 
     this.adverts = this.user.adverts;
+  }
+
+  navigateToAdvert(id: number) {
+    this.router.navigate(['/adverts/' + id]);
   }
 
 }

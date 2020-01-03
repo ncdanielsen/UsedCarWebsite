@@ -20,6 +20,10 @@ getAdvert(id): Observable<Advert> {
   return this.http.get<Advert>(this.baseUrl + 'posts/' + id);
 }
 
+createAdvert(advert: Advert) {
+  return this.http.post(this.baseUrl + 'posts', advert);
+}
+
 updateAdvert(id: number, advert: Advert) {
   return this.http.put(this.baseUrl + 'posts/' + id, advert);
 }
@@ -30,5 +34,13 @@ setMainPhoto(advertId: number, photoId: number) {
 
 deletePhoto(advertId: number, photoId: number) {
   return this.http.delete(this.baseUrl + 'photos/' + advertId + '/' + photoId);
+}
+
+setAdvertActive(advertId: number) {
+  return this.http.post(this.baseUrl + 'posts/' + advertId + '/setActive', {});
+}
+
+setAdvertExpired(advertId: number) {
+  return this.http.post(this.baseUrl + 'posts/' + advertId + '/setExpired', {});
 }
 }

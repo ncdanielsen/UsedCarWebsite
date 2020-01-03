@@ -5,6 +5,12 @@
     border-width: 1px;
 }
 
+#container {
+    width: 40%;
+    opacity: 80%;
+    background-color: lightblue;
+}
+
 input {
     margin: 0;
     padding: 0;

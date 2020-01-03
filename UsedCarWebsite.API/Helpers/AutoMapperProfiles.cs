@@ -26,6 +26,9 @@ namespace UsedCarWebsite.API.Helpers
             CreateMap<UserForUpdateDto, User>();
             CreateMap<Photo, PhotoForReturnDto>();
             CreateMap<PhotoForCreationDto, Photo>();
+            CreateMap<AdvertForUpdateDto, Advert>();
+            CreateMap<UserForRegisterDto, User>();
+            CreateMap<AdvertForCreationDto, Advert>();
         }
     }
 }

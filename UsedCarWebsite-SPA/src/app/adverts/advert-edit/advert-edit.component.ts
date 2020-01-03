@@ -1,8 +1,9 @@
 import { Component, OnInit, ViewChild, HostListener } from '@angular/core';
-import { ActivatedRoute } from '@angular/router';
+import { ActivatedRoute, Router } from '@angular/router';
 import { Advert } from 'src/app/_models/Advert';
 import { AdvertService } from 'src/app/_services/advert.service';
 import { NgForm } from '@angular/forms';
+import { AuthService } from 'src/app/_services/auth.service';
 
 @Component({
   selector: 'app-advert-edit',
@@ -20,12 +21,17 @@ export class AdvertEditComponent implements OnInit {
     }
   }
 
-  constructor(private advertService: AdvertService, private route: ActivatedRoute) { }
+  constructor(private advertService: AdvertService, private authService: AuthService, 
+              private route: ActivatedRoute, private router: Router) { }
 
   ngOnInit() {
     this.route.data.subscribe(data => {
       this.advert = data.advert;
     });
+    // tslint:disable-next-line: triple-equals
+    if (this.advert.userId != this.authService.currentUser() || this.advert.advertStatus.toLowerCase() === 'expired') {
+      this.router.navigate(['/home']);
+    }
   }
 
   updateAdvert() {
@@ -35,5 +41,9 @@ export class AdvertEditComponent implements OnInit {
     }, error => {
       console.log('Failed to save changes to advert');
     });
+  }
+
+  isActive() {
+    return this.advert.advertStatus.toLowerCase() === 'active';
   }
 }

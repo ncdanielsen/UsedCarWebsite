@@ -10,6 +10,8 @@ namespace UsedCarWebsite.API.Models
         public int Id { get; set; }
         public User User { get; set; }
         public int UserId { get; set; }
+        public string AdvertStatus { get; set; }
+        public string RegisterNumber { get; set; }
         public string Title { get; set; }
         public string Description { get; set; }
         public string Location { get; set; }
@@ -21,15 +23,14 @@ namespace UsedCarWebsite.API.Models
         public string Model { get; set; }
         public string Trim { get; set; }
         public int ModelYear { get; set; }
-        public string FuelType { get; set; }
-        public int HorsePower { get; set; }
-        public int Weight { get; set; }
-        public int SeatNumber { get; set; }
-        public int Mileage { get; set; }
         public string TransmissionType { get; set; }
         public string DriveType { get; set; }
+        public string FuelType { get; set; }
+        public int HorsePower { get; set; }
         public string Colour { get; set; }
         public string BodyStyle { get; set; }
-        public string RegisterNumber { get; set; }
+        public int SeatNumber { get; set; }
+        public int Mileage { get; set; }
+        public int Weight { get; set; }
     }
 }

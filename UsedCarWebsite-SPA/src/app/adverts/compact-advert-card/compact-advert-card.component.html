@@ -1,8 +1,8 @@
 <div class="card mb-3">
-  <img src="{{advert.photoUrl}}" alt="">
+  <img class="card-img" src="{{advert?.photoUrl || '../../assets/blank-profile-picture.png'}}" alt="">
   <div class="card-body">
-    <h6 class="card-title">{{advert.title}}</h6>
-    <p class="card-text">{{advert.location}}</p>
+    <h6 class="card-title">{{advert.modelYear}} {{advert.make}} {{advert.model}}</h6>
+    <p class="card-text">{{advert.mileage}} km</p>
     <strong class="card-text">{{advert.price}} kr</strong>
   </div>
 </div>

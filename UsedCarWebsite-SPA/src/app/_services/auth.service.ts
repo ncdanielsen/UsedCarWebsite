@@ -3,6 +3,7 @@ import { HttpClient } from '@angular/common/http';
 import {map} from 'rxjs/operators';
 import {JwtHelperService} from '@auth0/angular-jwt';
 import { environment } from 'src/environments/environment';
+import { User } from '../_models/User';
 @Injectable({
   providedIn: 'root'
 })
@@ -20,19 +21,24 @@ login(model: any) {
       if (user) {
         localStorage.setItem('token', user.token);
         this.decodedToken = this.jwtHelper.decodeToken(user.token);
-        console.log(this.decodedToken);
       }
     })
   );
 }
 
-register(model: any) {
-  return this.http.post(this.baseUrl + 'register', model);
+register(user: User) {
+  return this.http.post(this.baseUrl + 'register', user);
 }
 
 loggedIn() {
   const token = localStorage.getItem('token');
   return !this.jwtHelper.isTokenExpired(token);
+}
+
+currentUser() {
+  const token = localStorage.getItem('token');
+  this.decodedToken = this.jwtHelper.decodeToken(token);
+  return this.decodedToken.nameid;
 }
 
 }

@@ -13,7 +13,7 @@ namespace UsedCarWebsite.API.Data
         private readonly DataContext _context;
         public MainRepository(DataContext context)
         {
-            this._context = context;
+            _context = context;
         }
 
         public void Add<T>(T entity) where T : class
@@ -25,12 +25,26 @@ namespace UsedCarWebsite.API.Data
         {
             _context.Remove(entity);
         }
+        public async Task<Advert> AddAdvert(Advert advert)
+        {
+            await _context.Adverts.AddAsync(advert);
+            await _context.SaveChangesAsync();
+
+            return advert;
+        }
 
         public async Task<Advert> GetAdvert(int id)
         {
             var advert = await _context.Adverts.Include(p => p.Photos).Include(u => u.User).FirstOrDefaultAsync(a => a.Id == id);
 
             return advert;
+        }
+
+        public async Task<IEnumerable<Advert>> GetValidAdverts()
+        {
+            var adverts = await _context.Adverts.Where(a => a.AdvertStatus.ToLower() == "active").Include(p => p.Photos).Include(u => u.User).ToListAsync();
+
+            return adverts;
         }
 
         public async Task<IEnumerable<Advert>> GetAdverts()
@@ -72,5 +86,6 @@ namespace UsedCarWebsite.API.Data
         {
             return await _context.SaveChangesAsync() > 0;
         }
+
     }
 }

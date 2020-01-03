@@ -82,7 +82,7 @@ export class PhotoEditorComponent implements OnInit {
         console.log('Photo has been deleted');
       }, error => {
         console.log('Failed to delete the photo');
-      })
+      });
     }
   }
 }
