@@ -8,6 +8,7 @@ using System.Security.Claims;
 using System.Threading.Tasks;
 using UsedCarWebsite.API.Data;
 using UsedCarWebsite.API.Dtos;
+using UsedCarWebsite.API.Helpers;
 using UsedCarWebsite.API.Models;
 
 namespace UsedCarWebsite.API.Controllers
@@ -25,10 +26,13 @@ namespace UsedCarWebsite.API.Controllers
         }
 
         [HttpGet]
-        public async Task<IActionResult> GetValidPosts()
+        public async Task<IActionResult> GetActivePosts([FromQuery]AdvertParams advertParams)
         {
-            var posts = await _repo.GetValidAdverts();
+            var posts = await _repo.GetActiveAdverts(advertParams);
             var postsToReturn = _mapper.Map<IEnumerable<AdvertForListDto>>(posts);
+
+            Response.AddPagination(posts.CurrentPage, posts.PageSize,
+                posts.TotalItemCount, posts.TotalPages);
 
             return Ok(postsToReturn);
         }
@@ -88,6 +92,8 @@ namespace UsedCarWebsite.API.Controllers
 
             var advertToCreate = _mapper.Map<Advert>(advertForCreationDto);
 
+            advertToCreate.DateCreated = DateTime.Now;
+
             var createdAdvert = await _repo.AddAdvert(advertToCreate);
 
             var advertTorReturn = _mapper.Map<AdvertForDetailedDto>(advertToCreate);
@@ -96,18 +102,18 @@ namespace UsedCarWebsite.API.Controllers
         }
 
         [Authorize]
-        [HttpPost("{advertId}/setActive")]
-        public async Task<IActionResult> SetPostActive(int advertId)
+        [HttpPost("{advertId}/changeStatus")]
+        public async Task<IActionResult> SetPostStatus(int advertId)
         {
             var advertFromRepo = await _repo.GetAdvert(advertId);
 
             if (advertFromRepo.UserId != int.Parse(User.FindFirst(ClaimTypes.NameIdentifier).Value))
                 return Unauthorized();
-            
-            if (advertFromRepo.AdvertStatus.ToLower() == "active")
-                return NoContent();
 
-            advertFromRepo.AdvertStatus = "active";
+            if (advertFromRepo.AdvertStatus.ToLower() == "inactive" || advertFromRepo.AdvertStatus.ToLower() == "expired")
+                advertFromRepo.AdvertStatus = "active";
+            else if (advertFromRepo.AdvertStatus.ToLower() == "active")
+                advertFromRepo.AdvertStatus = "expired";
 
             if (await _repo.SaveAll())
                 return NoContent();
@@ -115,24 +121,6 @@ namespace UsedCarWebsite.API.Controllers
             throw new Exception($"Updating advert {advertId} failed on save");
         }
 
-        [Authorize]
-        [HttpPost("{advertId}/setExpired")]
-        public async Task<IActionResult> SetPostExpired(int advertId, AdvertForUpdateDto advertForUpdateDto)
-        {
-            var advertFromRepo = await _repo.GetAdvert(advertId);
 
-            if (advertFromRepo.UserId != int.Parse(User.FindFirst(ClaimTypes.NameIdentifier).Value))
-                return Unauthorized();
-
-            if (advertFromRepo.AdvertStatus.ToLower() != "active")
-                return NoContent();
-
-            advertFromRepo.AdvertStatus = "expired";
-
-            if (await _repo.SaveAll())
-                return NoContent();
-
-            throw new Exception($"Updating advert {advertId} failed on save");
-        }
     }
 }

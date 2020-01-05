@@ -14,8 +14,10 @@ namespace UsedCarWebsite.API.Models
         public string RegisterNumber { get; set; }
         public string Title { get; set; }
         public string Description { get; set; }
+        public string ContactInfo { get; set; }
         public string Location { get; set; }
         public int Price { get; set; }
+        public DateTime DateCreated { get; set; }
         public ICollection<Photo> Photos { get; set; }
 
         //Car specifics

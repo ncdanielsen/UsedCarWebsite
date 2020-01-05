@@ -15,6 +15,7 @@ namespace UsedCarWebsite.API.Dtos
         public string Title { get; set; }
         public string Location { get; set; }
         public int Price { get; set; }
+        public DateTime DateCreated { get; set; }
         public string PhotoUrl { get; set; }
 
         public string Make { get; set; }

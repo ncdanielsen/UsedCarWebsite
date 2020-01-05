@@ -8,11 +8,13 @@ import { catchError } from 'rxjs/operators';
 
 @Injectable()
 export class ListCarsResolver implements Resolve<Advert[]> {
+    pageNumber = 1;
+    pageSize = 10;
 
     constructor(private advertService: AdvertService, private router: Router) {}
 
     resolve(route: ActivatedRouteSnapshot): Observable<Advert[]> {
-        return this.advertService.getAdverts().pipe(
+        return this.advertService.getAdverts(this.pageNumber, this.pageSize).pipe(
             catchError(error => {
                 console.log('Failed to retrieve data');
                 this.router.navigate(['/home']);

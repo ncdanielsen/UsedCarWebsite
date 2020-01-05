@@ -12,3 +12,8 @@
     padding: 10px 15 px;
     border-top: none;
 }
+
+#notification {
+    opacity: 80%;
+    background-color: lightblue;
+}

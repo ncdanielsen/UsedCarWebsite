@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
+using UsedCarWebsite.API.Helpers;
 using UsedCarWebsite.API.Models;
 
 namespace UsedCarWebsite.API.Data
@@ -15,7 +16,7 @@ namespace UsedCarWebsite.API.Data
         Task<bool> SaveAll();
         Task<IEnumerable<User>> GetUsers();
         Task<User> GetUser(int id);
-        Task<IEnumerable<Advert>> GetValidAdverts();
+        Task<PagedList<Advert>> GetActiveAdverts(AdvertParams advertParams);
         Task<IEnumerable<Advert>> GetAdverts();
         Task<Advert> GetAdvert(int id);
         Task<Photo> GetPhoto(int id);

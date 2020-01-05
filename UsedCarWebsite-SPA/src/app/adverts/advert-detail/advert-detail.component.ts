@@ -67,22 +67,16 @@ export class AdvertDetailComponent implements OnInit {
     return this.advert.advertStatus.toLowerCase() === 'active';
   }
 
-  markSold() {
-    this.advertService.setAdvertExpired(this.advert.id).subscribe(() => {
-      console.log('Saved Changes');
-      window.location.reload();
-    }, error => {
-      console.log(error);
-    });
+  isExpired() {
+    return this.advert.advertStatus.toLowerCase() === 'expired';
   }
 
-  markActive() {
-    this.advertService.setAdvertActive(this.advert.id).subscribe(() => {
+  changeStatus() {
+    this.advertService.changeAdvertStatus(this.advert.id).subscribe(() => {
       console.log('Saved Changes');
+      window.location.reload();
     }, error => {
       console.log(error);
-    }, () => {
-      window.location.reload();
     });
   }
 }

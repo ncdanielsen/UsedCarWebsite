@@ -3,6 +3,7 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
+using UsedCarWebsite.API.Helpers;
 using UsedCarWebsite.API.Models;
 
 namespace UsedCarWebsite.API.Data
@@ -40,11 +41,11 @@ namespace UsedCarWebsite.API.Data
             return advert;
         }
 
-        public async Task<IEnumerable<Advert>> GetValidAdverts()
+        public async Task<PagedList<Advert>> GetActiveAdverts(AdvertParams advertParams)
         {
-            var adverts = await _context.Adverts.Where(a => a.AdvertStatus.ToLower() == "active").Include(p => p.Photos).Include(u => u.User).ToListAsync();
+            var adverts = _context.Adverts.Where(a => a.AdvertStatus.ToLower() == "active").Include(p => p.Photos).Include(u => u.User);
 
-            return adverts;
+            return await PagedList<Advert>.CreateAsync(adverts, advertParams.PageNumber, advertParams.PageSize);
         }
 
         public async Task<IEnumerable<Advert>> GetAdverts()
