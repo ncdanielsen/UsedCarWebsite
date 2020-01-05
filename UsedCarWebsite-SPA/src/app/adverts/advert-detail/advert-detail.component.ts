@@ -34,7 +34,6 @@ export class AdvertDetailComponent implements OnInit {
       }
     ];
     this.galleryImages = this.getImages();
-    console.log(this.advert.advertStatus);
   }
 
   getImages() {
