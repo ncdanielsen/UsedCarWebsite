@@ -14,14 +14,36 @@ export class AdvertService {
 
 constructor(private http: HttpClient) { }
 
-getAdverts(page?, itemsPerPage?): Observable<PaginatedResult<Advert[]>> {
+getAdverts(page?, itemsPerPage?, advertParams?): Observable<PaginatedResult<Advert[]>> {
   const paginatedResult: PaginatedResult<Advert[]> = new PaginatedResult<Advert[]>();
 
   let params = new HttpParams();
 
-  if (page != null && itemsPerPage != null){
+  if (page != null && itemsPerPage != null) {
     params = params.append('pageNumber', page);
     params = params.append('pageSize', itemsPerPage);
+  }
+
+  if (advertParams != null) {
+    params = params.append('make', advertParams.make);
+    params = params.append('model', advertParams.model);
+    params = params.append('transmissionType', advertParams.transmissionType);
+    params = params.append('driveType', advertParams.driveType);
+    params = params.append('fuelType', advertParams.fuelType);
+    params = params.append('colour', advertParams.colour);
+    params = params.append('bodyStyle', advertParams.bodyStyle);
+    params = params.append('minPrice', advertParams.minPrice);
+    params = params.append('maxPrice', advertParams.maxPrice);
+    params = params.append('minModelYear', advertParams.minModelYear);
+    params = params.append('maxModelYear', advertParams.maxModelYear);
+    params = params.append('minHorsePower', advertParams.minHorsePower);
+    params = params.append('maxHorsePower', advertParams.maxHorsePower);
+    params = params.append('minMileage', advertParams.minMileage);
+    params = params.append('maxMileage', advertParams.maxMileage);
+    params = params.append('minSeatNumber', advertParams.minSeatNumber);
+    params = params.append('maxSeatNumber', advertParams.maxSeatNumber);
+    params = params.append('minWeight', advertParams.minWeight);
+    params = params.append('maxWeight', advertParams.maxWeight);
   }
 
   return this.http.get<Advert[]>(this.baseUrl + 'posts/', {observe: 'response', params})

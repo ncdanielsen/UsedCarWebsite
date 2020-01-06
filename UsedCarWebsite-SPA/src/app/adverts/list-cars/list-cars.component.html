@@ -1,8 +1,136 @@
 <div class="container mt-5">
   <div class="row">
-      <div *ngFor="let advert of adverts" class="col-lg-12 col-md-12 col-sm-12">
-        <app-advert-card [advert]="advert"></app-advert-card>
-      </div>
+    <div class="column">
+      <form #form="ngForm" (ngSubmit)="loadAdverts()" novalidate>
+        <div class="form-group">
+          <label for="make">Make: </label>
+          <input type=string class="form-control" id="make" name="make" [(ngModel)]="advertParams.make">
+        </div>
+        <div class="form-group">
+          <label for="model">Model: </label>
+          <input type=string class="form-control" id="model" name="model" [(ngModel)]="advertParams.model">
+        </div>
+
+        <div class="form-group">
+          <label for="transmissionType">Transmission: </label>
+          <select class="form-control" id="transmissionType" name="transmissionType" [(ngModel)]="advertParams.transmissionType">
+            <option *ngFor="let transmission of transmissionList" [value]="transmission.value">
+              {{transmission.display}}
+            </option>
+          </select>
+        </div>
+        <div class="form-group">
+          <label for="driveType">Drive: </label>
+          <select class="form-control" id="driveType" name="driveType" [(ngModel)]="advertParams.driveType">
+            <option *ngFor="let drive of driveList" [value]="drive.value">
+              {{drive.display}}
+            </option>
+          </select>
+        </div>
+        <div class="form-group">
+          <label for="fuelType">Fuel: </label>
+          <select class="form-control" id="fuelType" name="fuelType" [(ngModel)]="advertParams.fuelType">
+            <option *ngFor="let fuel of fuelList" [value]="fuel.value">
+              {{fuel.display}}
+            </option>
+          </select>
+        </div>
+        <div class="form-group">
+          <label for="colour">Colour: </label>
+          <select class="form-control" id="colour" name="colour" [(ngModel)]="advertParams.colour">
+            <option *ngFor="let colour of colourList" [value]="colour.value">
+              {{colour.display}}
+            </option>
+          </select>
+        </div>
+        <div class="form-group">
+          <label for="bodyStyle">Bodystyle: </label>
+          <select class="form-control" id="bodyStyle" name="bodyStyle" [(ngModel)]="advertParams.bodyStyle">
+            <option *ngFor="let bodyStyle of bodyStyleList" [value]="bodyStyle.value">
+              {{bodyStyle.display}}
+            </option>
+          </select>
+        </div>
+
+        
+
+        <label for="Price">Price: </label>
+        <div name="price" class="form-row">
+          <div class="col">
+            <input type="number" class="form-control" id="minPrice" name="minPrice" placeholder="min" [(ngModel)]="advertParams.minPrice">
+          </div>
+          <div class="col">
+            <input type="number" class="form-control" id="maxPrice" name="maxPrice" placeholder="max" [(ngModel)]="advertParams.maxPrice">
+          </div>
+        </div>
+
+        <label for="modelYear"> Model Year: </label>
+        <div name="modelYear" class="form-row">
+          <div class="col">
+            <input type="number" class="form-control" id="minModelYear" name="minModelYear" placeholder="min" [(ngModel)]="advertParams.minModelYear">
+          </div>
+          <div class="col">
+            <input type="number" class="form-control" id="maxModelYear" name="maxModelYear" placeholder="max" [(ngModel)]="advertParams.maxModelYear">
+          </div>
+        </div>
+
+        <label for="horsePower">Horsepower: </label>
+        <div name="horsePower" class="form-row">
+          <div class="col">
+            <input type="number" class="form-control" id="minHorsePower" name="minHorsePower" placeholder="min" [(ngModel)]="advertParams.minHorsePower">
+          </div>
+          <div class="col">
+            <input type="number" class="form-control" id="maxHorsePower" name="maxHorsePower" placeholder="max" [(ngModel)]="advertParams.maxHorsePower">
+          </div>
+        </div>
+
+        <label for="mileage">Mileage: </label>
+        <div name="mileage" class="form-row">
+          <div class="col">
+            <input type="number" class="form-control" id="minMileage" name="minMileage" placeholder="min" [(ngModel)]="advertParams.minMileage">
+          </div>
+          <div class="col">
+            <input type="number" class="form-control" id="maxMileage" name="maxMileage" placeholder="max" [(ngModel)]="advertParams.maxMileage">
+          </div>
+        </div>
+
+        <label for="seatNumber">Number of Seats</label>
+        <div name="seatNumber" class="form-row">
+          <div class="col">
+            <input type="number" class="form-control" id="minSeatNumber" name="minSeatNumber" placeholder="min" [(ngModel)]="advertParams.minSeatNumber">
+          </div>
+          <div class="col">
+            <input type="number" class="form-control" id="maxSeatNumber" name="maxSeatNumber" placeholder="max" [(ngModel)]="advertParams.maxSeatNumber">
+          </div>
+        </div>
+
+        <label for="weight"> Weight: </label>
+        <div name="weight" class="form-row">
+          <div class="col">
+            <input type="number" class="form-control" id="minWeight" name="minWeight" placeholder="min" [(ngModel)]="advertParams.minWeight">
+          </div>
+          <div class="col">
+            <input type="number" class="form-control" id="maxWeight" name="maxWeight" placeholder="max" [(ngModel)]="advertParams.maxWeight">
+          </div>
+        </div>
+
+        <div class="row">
+          <div class="column">
+            <button type="submit" class="btn btn-primary">Apply Filters</button>
+            
+          </div>
+          <div class="column">
+            <button type="button" class="btn btn-info" (click)="resetFilters()">Reset Filter</button>
+            
+          </div>
+        </div>
+      </form>
+    </div>
+    <div class="column">
+        <div *ngFor="let advert of adverts" class="col-lg-12 col-md-12 col-sm-12">
+          <app-advert-card [advert]="advert"></app-advert-card>
+        </div>
+    </div>
   </div>
 </div>
 <div class="d-flex justify-content-center">
