@@ -20,6 +20,7 @@ export interface Advert {
     colour?: string;
     bodyStyle?: string;
     description?: string;
+    contactInfo?: string;
     trim?: string;
     registerNumber: string;
     photos?: Photo[];

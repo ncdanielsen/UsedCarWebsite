@@ -26,9 +26,7 @@ import { AdvertService } from './_services/advert.service';
 import { AdvertDetailResolver } from './_resolver/advert-detail.resolver';
 import { AuthGuard } from './_guards/auth.guard';
 import { ListCarsResolver } from './_resolver/list-cars.resolver';
-import { UserDetailComponent } from './user/user-detail/user-detail.component';
 import { UserEditComponent } from './user/user-edit/user-edit.component';
-import { UserProfileComponent } from './user/user-profile/user-profile.component';
 import { UserProfileResolver } from './_resolver/user-profile.resolver';
 import { UserDetailResolver } from './_resolver/user-detail.resolver';
 import { CompactAdvertCardComponent } from './adverts/compact-advert-card/compact-advert-card.component';
@@ -64,9 +62,7 @@ export class CustomHammerConfig extends HammerGestureConfig {
       LoginComponent,
       AdvertCardComponent,
       AdvertDetailComponent,
-      UserDetailComponent,
       UserEditComponent,
-      UserProfileComponent,
       CompactAdvertCardComponent,
       AdvertEditComponent,
       PhotoEditorComponent

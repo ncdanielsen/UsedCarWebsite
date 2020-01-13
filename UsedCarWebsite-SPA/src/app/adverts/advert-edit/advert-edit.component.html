@@ -1,7 +1,9 @@
-
-  <div id="container" class="container mt-3 mb-4" [hidden]="isActive()">
+<div id="container" class="container mt-3 mb-4" [hidden]="isActive()">
     <p>The advert is currently inactive. Press the 'Make advert active' button when you are done filling out the form to make it visible to others</p>
-  </div>
+</div>
+<div *ngIf="advertEditForm.dirty" class="alert alert-info">
+  <p><strong>Information:</strong> You have unsaved changes</p>
+</div>
 <div id="formContainer" class="container mt-3 mb-3">
   <h2>Edit Advert</h2>
   <form id="advertEditForm" #advertEditForm="ngForm" (ngSubmit)="updateAdvert()">

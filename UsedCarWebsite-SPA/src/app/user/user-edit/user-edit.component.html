@@ -1,63 +1,38 @@
-<div class="container mt-5">
-  <div class="row">
-    <div class="col-sm-4">
-      <h1>Your Profile</h1>
-    </div>
+<div id="editProfileContainer" class="container mt-3 mb-5">
+  <div class="row align-items-center justify-content-center">
     <div class="col-sm-8">
-      <div *ngIf="editForm.dirty" class="alert alert-info">
-        <p><strong>Information:</strong> You have unsaved changes</p>
-      </div>
-    </div>
-  </div>
-  <div class="row">
-      <div class="col-sm-4">
-        <div class="card">
-          <img class="card-img-top img-thumbnail" src="https://cdn.pixabay.com/photo/2015/10/05/22/37/blank-profile-picture-973460_960_720.png" alt="">
-          <div class="card-body">
-            <div>
-              <strong>Username:</strong>
-              <p>{{user?.username}}</p>
-            </div>
-            <div>
-              <strong>Birthdate:</strong>
-              <p>{{user?.birthdate}}</p>
-            </div>
-          </div>
-          <div class="card-footer">
-              <div class="btn-group d-flex">
-                <button class="btn btn-primary w-100">Button 1</button>
-                <button class="btn btn-success w-100">Button 2</button>
-              </div>
-          </div>
-        </div>
-      </div>
-      <div class="col-sm-8">
-        <div class="tab-panel">
+      <h1>Your Profile</h1>
+        <div class="tab-panel mt-3">
           <tabset class="user-tabset">
-            <tab heading="Edit Profile">
+            <tab heading="Edit Profile"> 
               <form id="editForm" #editForm="ngForm" (ngSubmit)="updateUser()">
-                <h4>User</h4>
-                <div class="form-group">
-                  <label for="username">Username </label>
-                  <input class="form-control" type="text" name="username" [(ngModel)]="user.username">
-                </div>
-                <div class="form-group">
-                  <label for="email">Email</label>
-                  <input class="form-control" type="email" name="email" [(ngModel)]="user.email">
-                </div>
-                <div class="form-group">
-                  <label for="gender">Gender</label>
-                  <input class="form-control" type="text" name="gender" [(ngModel)]="user.gender">
-                </div>
-                <div class="form-group">
-                  <label for="address">Address</label>
-                  <input class="form-control" type="text" name="address" [(ngModel)]="user.address">
+                <div class="mt-3">
+                  <div class="form-group">
+                    <label for="username">Username </label>
+                    <input class="form-control" type="text" name="username" [(ngModel)]="user.username">
+                  </div>
+                  <div class="form-group">
+                    <label for="email">Email</label>
+                    <input class="form-control" type="email" name="email" [(ngModel)]="user.email">
+                  </div>
+                  <div class="form-group">
+                    <label for="gender">Gender</label>
+                    <input class="form-control" type="text" name="gender" [(ngModel)]="user.gender">
+                  </div>
+                  <div class="form-group">
+                    <label for="address">Address</label>
+                    <input class="form-control" type="text" name="address" [(ngModel)]="user.address">
+                  </div>
                 </div>
               </form>
               <button form="editForm" class="btn btn-success w-100 mt-3 mb-4" [disabled]="!editForm.dirty">Save Changes</button>
             </tab>
-            <tab heading="Edit Photo">
-              <p>Photo edit will go here</p>>
+            <tab heading="View adverts">
+              <div class="row">
+                <div *ngFor="let advert of adverts" class="col-lg-4 col-md-6 col-sm-12 mt-3">
+                  <app-compact-advert-card [advert]="advert" (click)="navigateToAdvert(advert.id)"></app-compact-advert-card>
+                </div> 
+              </div>
             </tab>
           </tabset>
         </div>
