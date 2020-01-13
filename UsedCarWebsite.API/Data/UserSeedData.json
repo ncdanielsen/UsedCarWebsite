@@ -32,7 +32,7 @@
         "Weight": "1545",
         "TransmissionType": "Manual",
         "DriveType": "FWD",
-        "BodyStyle": "5-Door Hatchback",
+        "BodyStyle": "Hatchback",
         "Mileage": "76990",
         "Registernumber": "VW22063",
         "Photos": [
@@ -136,7 +136,7 @@
         "Weight": "1120",
         "TransmissionType": "Manual",
         "DriveType": "FWD",
-        "BodyStyle": "5-Door Sedan",
+        "BodyStyle": "Sedan",
         "Mileage": "176990",
         "Registernumber": "CO16863",
         "Photos": [
@@ -164,7 +164,7 @@
         "Weight": "1120",
         "TransmissionType": "Manual",
         "DriveType": "FWD",
-        "BodyStyle": "5-Door Sedan",
+        "BodyStyle": "Sedan",
         "Mileage": "176990",
         "Registernumber": "CO16863",
         "Photos": [
