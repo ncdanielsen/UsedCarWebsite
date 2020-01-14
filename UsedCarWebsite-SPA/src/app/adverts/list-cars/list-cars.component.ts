@@ -17,13 +17,13 @@ export class ListCarsComponent implements OnInit {
   transmissionList = [{value: 'manual', display: 'Manual'}, {value: 'automatic', display: 'Automatic'}];
   driveList = [{value: 'fwd', display: 'FWD'}, {value: 'rwd', display: 'RWD'},
                {value: 'awd', display: 'AWD'}];
-  fuelList = [{value: 'petrol', display: 'Petrol'}, {value: 'diesel', display: 'Diesel'}, 
+  fuelList = [{value: 'petrol', display: 'Petrol'}, {value: 'diesel', display: 'Diesel'},
               {value: 'electric', display: 'Electric'}];
-  colourList = [{value: 'blue', display: 'Blue'}, {value:'grey', display: 'Grey'},
+  colourList = [{value: 'blue', display: 'Blue'}, {value: 'grey', display: 'Grey'},
                 {value: 'red', display: 'Red'}, {value: 'white', display: 'White'},
                 {value: 'black', display: 'Black'}, {value: 'silver', display: 'Silver'},
                 {value: 'other', display: 'Other'}];
-  bodyStyleList = [{value: 'coupe', display: 'Coupe'}, {value:'sedan', display: 'Sedan'},
+  bodyStyleList = [{value: 'coupe', display: 'Coupe'}, {value: 'sedan', display: 'Sedan'},
                   {value: 'hatchback', display: 'Hatchback'}, {value: 'suv', display: 'SUV'},
                   {value: 'wagon', display: 'Wagon'}, {value: 'convertible', display: 'Convertible'},
                   {value: 'other', display: 'Other'}];
@@ -36,13 +36,13 @@ export class ListCarsComponent implements OnInit {
       this.pagination = data.adverts.pagination;
     });
 
-    this.advertParams.make = "";
-    this.advertParams.model = "";
-    this.advertParams.transmissionType = "";
-    this.advertParams.driveType = "";
-    this.advertParams.fuelType = "";
-    this.advertParams.colour = "";
-    this.advertParams.bodyStyle = "";
+    this.advertParams.make = '';
+    this.advertParams.model = '';
+    this.advertParams.transmissionType = '';
+    this.advertParams.driveType = '';
+    this.advertParams.fuelType = '';
+    this.advertParams.colour = '';
+    this.advertParams.bodyStyle = '';
     this.advertParams.minPrice = 0;
     this.advertParams.maxPrice = 10000000;
     this.advertParams.minModelYear = 1900;
@@ -63,13 +63,13 @@ export class ListCarsComponent implements OnInit {
   }
 
   resetFilters() {
-    this.advertParams.make = "";
-    this.advertParams.model = "";
-    this.advertParams.transmissionType = "";
-    this.advertParams.driveType = "";
-    this.advertParams.fuelType = "";
-    this.advertParams.colour = "";
-    this.advertParams.bodyStyle = "";
+    this.advertParams.make = '';
+    this.advertParams.model = '';
+    this.advertParams.transmissionType = '';
+    this.advertParams.driveType = '';
+    this.advertParams.fuelType = '';
+    this.advertParams.colour = '';
+    this.advertParams.bodyStyle = '';
     this.advertParams.minPrice = 0;
     this.advertParams.maxPrice = 10000000;
     this.advertParams.minModelYear = 1900;
@@ -94,6 +94,6 @@ export class ListCarsComponent implements OnInit {
       this.pagination = res.pagination;
     }, error => {
       console.log(error);
-    })
+    });
   }
 }

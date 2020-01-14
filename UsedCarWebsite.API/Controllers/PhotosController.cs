@@ -17,7 +17,7 @@ using UsedCarWebsite.API.Models;
 namespace UsedCarWebsite.API.Controllers
 {
     [Authorize]
-    [Route("api/photos/{advertId}")]
+    [Route("api/[controller]/{advertId}")]
     [ApiController]
     public class PhotosController : ControllerBase
     {
@@ -68,7 +68,7 @@ namespace UsedCarWebsite.API.Controllers
                     var uploadParams = new ImageUploadParams()
                     {
                         File = new FileDescription(file.Name, stream),
-                        Transformation = new Transformation().Width(1280).Height(720).Crop("pad")
+                        Transformation = new Transformation().Width(1280).Height(720).Crop("fill")
                     };
 
                     uploadResult = _cloudinary.Upload(uploadParams);
@@ -89,7 +89,7 @@ namespace UsedCarWebsite.API.Controllers
             if(await _repo.SaveAll())
             {
                 var photoToReturn = _mapper.Map<PhotoForReturnDto>(photo);
-                return CreatedAtRoute("GetPhoto", new { id = photo.Id }, photoToReturn);
+                return CreatedAtRoute("GetPhoto", new { advertId, id = photo.Id }, photoToReturn);
             }
 
             return BadRequest("Could not add the photo");

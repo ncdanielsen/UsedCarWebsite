@@ -25,7 +25,7 @@ export class AdvertDetailComponent implements OnInit {
 
     this.galleryOptions = [
       {
-        width: '700px',
+        width: '900px',
         height: '500px',
         imagePercent: 100,
         thumbnailsColumns: 4,
@@ -38,12 +38,20 @@ export class AdvertDetailComponent implements OnInit {
 
   getImages() {
     const imageUrls = [];
-    for (const photo of this.advert.photos) {
+    if (this.advert.photos.length > 0) {
+      for (const photo of this.advert.photos) {
+        imageUrls.push({
+          small: photo.url,
+          medium: photo.url,
+          big: photo.url,
+          description: photo.description
+        });
+      }
+    } else {
       imageUrls.push({
-        small: photo.url,
-        medium: photo.url,
-        big: photo.url,
-        description: photo.description
+        small: 'https://res.cloudinary.com/ekddjmgn6hh/image/upload/v1579024930/tj9jxtcjakmcyfdb733q_wxkvv2.png',
+        medium: 'https://res.cloudinary.com/ekddjmgn6hh/image/upload/v1579024930/tj9jxtcjakmcyfdb733q_wxkvv2.png',
+        big: 'https://res.cloudinary.com/ekddjmgn6hh/image/upload/v1579024930/tj9jxtcjakmcyfdb733q_wxkvv2.png'
       });
     }
     return imageUrls;
@@ -78,5 +86,9 @@ export class AdvertDetailComponent implements OnInit {
     }, error => {
       console.log(error);
     });
+  }
+
+  getPhotoStatus() {
+    return this.advert.photos.length > 0;
   }
 }
