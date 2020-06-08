@@ -1,0 +1,14 @@
+[
+  {
+    "FuelType": "Petrol"
+  },
+  {
+    "FuelType": "Diesel"
+  },
+  {
+    "FuelType": "Electric"
+  },
+  {
+    "FuelType": "Hybrid"
+  }
+]

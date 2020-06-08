@@ -24,7 +24,7 @@ namespace UsedCarWebsite.API
                 {
                     var context = services.GetRequiredService<DataContext>();
                     context.Database.Migrate();
-                    Seed.SeedUsers(context);
+                    Seed.SeedData(context);
                 }
                 catch (Exception ex)
                 {

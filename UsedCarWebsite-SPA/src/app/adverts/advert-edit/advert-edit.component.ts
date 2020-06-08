@@ -4,6 +4,12 @@ import { Advert } from 'src/app/_models/Advert';
 import { AdvertService } from 'src/app/_services/advert.service';
 import { NgForm, FormBuilder, Validators, FormGroup, FormControl } from '@angular/forms';
 import { AuthService } from 'src/app/_services/auth.service';
+import { CarValues } from 'src/app/_models/CarValues';
+import { FuelType } from 'src/app/_models/FuelType';
+import { DriveType } from 'src/app/_models/DriveType';
+import { Transmission } from 'src/app/_models/Transmission';
+import { Colour } from 'src/app/_models/Colour';
+import { BodyStyle } from 'src/app/_models/BodyStyle';
 
 @Component({
   selector: 'app-advert-edit',
@@ -13,7 +19,13 @@ import { AuthService } from 'src/app/_services/auth.service';
 export class AdvertEditComponent implements OnInit {
   @ViewChild('advertEditForm', {static: true}) advertEditForm: NgForm;
   advert: Advert;
-
+  carValues: CarValues;
+  colourList: Colour[];
+  transmissionList: Transmission[];
+  driveList: DriveType[];
+  fuelList: FuelType[];
+  bodyStyleList: BodyStyle[];
+  /*
   transmissionList = [{value: 'manual', display: 'Manual'}, {value: 'automatic', display: 'Automatic'}];
   driveList = [{value: 'fwd', display: 'FWD'}, {value: 'rwd', display: 'RWD'},
                {value: 'awd', display: 'AWD'}];
@@ -27,6 +39,7 @@ export class AdvertEditComponent implements OnInit {
                   {value: 'hatchback', display: 'Hatchback'}, {value: 'suv', display: 'SUV'},
                   {value: 'wagon', display: 'Wagon'}, {value: 'convertible', display: 'Convertible'},
                   {value: 'other', display: 'Other'}];
+  */
 
   @HostListener('window:beforeunload', ['$event'])
   unloadNotification($event: any) {
@@ -41,7 +54,15 @@ export class AdvertEditComponent implements OnInit {
   ngOnInit() {
     this.route.data.subscribe(data => {
       this.advert = data.advert;
+      this.carValues = data.carValues;
     });
+
+    this.colourList = this.carValues.colours;
+    this.transmissionList = this.carValues.transmissions;
+    this.driveList = this.carValues.driveTypes;
+    this.fuelList = this.carValues.fuelTypes;
+    this.bodyStyleList = this.carValues.bodyStyles;
+
     // tslint:disable-next-line: triple-equals
     if (this.advert.userId != this.authService.currentUser() || this.advert.advertStatus.toLowerCase() === 'expired') {
       this.router.navigate(['/home']);

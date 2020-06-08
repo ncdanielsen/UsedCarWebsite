@@ -1,0 +1,23 @@
+[
+  {
+    "BodyStyleType": "Coupe"
+  },
+  {
+    "BodyStyleType": "Sedan"
+  },
+  {
+    "BodyStyleType": "Hatchback"
+  },
+  {
+    "BodyStyleType": "SUV"
+  },
+  {
+    "BodyStyleType": "Wagon"
+  },
+  {
+    "BodyStyleType": "Convertible"
+  },
+  {
+    "BodyStyleType": "Other"
+  }
+]

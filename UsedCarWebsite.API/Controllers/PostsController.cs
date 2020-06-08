@@ -60,7 +60,6 @@ namespace UsedCarWebsite.API.Controllers
             }
 
             var postToReturn = _mapper.Map<AdvertForDetailedDto>(post);
-            Console.WriteLine(postToReturn.TransmissionType);
 
             return Ok(postToReturn);
         }

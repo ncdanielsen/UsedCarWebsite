@@ -3,6 +3,12 @@ import { ActivatedRoute } from '@angular/router';
 import { Advert } from '../../_models/Advert';
 import { AdvertService } from '../../_services/advert.service';
 import { Pagination, PaginatedResult } from 'src/app/_models/Pagination';
+import { CarValues } from 'src/app/_models/CarValues';
+import { Transmission } from 'src/app/_models/Transmission';
+import { DriveType } from 'src/app/_models/DriveType';
+import { FuelType } from 'src/app/_models/FuelType';
+import { Colour } from 'src/app/_models/Colour';
+import { BodyStyle } from 'src/app/_models/BodyStyle';
 
 @Component({
   selector: 'app-list-cars',
@@ -11,22 +17,32 @@ import { Pagination, PaginatedResult } from 'src/app/_models/Pagination';
 })
 export class ListCarsComponent implements OnInit {
   adverts: Advert[];
+  carValues: CarValues;
   pagination: Pagination;
   advertParams: any = {};
+  colourList: Colour[];
+  transmissionList: Transmission[];
+  driveList: DriveType[];
+  fuelList: FuelType[];
+  bodyStyleList: BodyStyle[];
 
+  /*
   transmissionList = [{value: 'manual', display: 'Manual'}, {value: 'automatic', display: 'Automatic'}];
+
   driveList = [{value: 'fwd', display: 'FWD'}, {value: 'rwd', display: 'RWD'},
-               {value: 'awd', display: 'AWD'}];
+  {value: 'awd', display: 'AWD'}];
   fuelList = [{value: 'petrol', display: 'Petrol'}, {value: 'diesel', display: 'Diesel'},
-              {value: 'electric', display: 'Electric'}];
+  {value: 'electric', display: 'Electric'}];
   colourList = [{value: 'blue', display: 'Blue'}, {value: 'grey', display: 'Grey'},
-                {value: 'red', display: 'Red'}, {value: 'white', display: 'White'},
-                {value: 'black', display: 'Black'}, {value: 'silver', display: 'Silver'},
-                {value: 'other', display: 'Other'}];
+  {value: 'red', display: 'Red'}, {value: 'white', display: 'White'},
+  {value: 'black', display: 'Black'}, {value: 'silver', display: 'Silver'},
+  {value: 'other', display: 'Other'}];
   bodyStyleList = [{value: 'coupe', display: 'Coupe'}, {value: 'sedan', display: 'Sedan'},
-                  {value: 'hatchback', display: 'Hatchback'}, {value: 'suv', display: 'SUV'},
-                  {value: 'wagon', display: 'Wagon'}, {value: 'convertible', display: 'Convertible'},
-                  {value: 'other', display: 'Other'}];
+  {value: 'hatchback', display: 'Hatchback'}, {value: 'suv', display: 'SUV'},
+  {value: 'wagon', display: 'Wagon'}, {value: 'convertible', display: 'Convertible'},
+  {value: 'other', display: 'Other'}];
+  */
+
 
   constructor(private advertService: AdvertService, private route: ActivatedRoute) { }
 
@@ -34,6 +50,17 @@ export class ListCarsComponent implements OnInit {
     this.route.data.subscribe(data => {
       this.adverts = data.adverts.result;
       this.pagination = data.adverts.pagination;
+      this.carValues = data.carValues;
+    });
+
+    this.colourList = this.carValues.colours;
+    this.transmissionList = this.carValues.transmissions;
+    this.driveList = this.carValues.driveTypes;
+    this.fuelList = this.carValues.fuelTypes;
+    this.bodyStyleList = this.carValues.bodyStyles;
+
+    this.transmissionList.forEach(element => {
+      console.log(element);
     });
 
     this.advertParams.make = '';

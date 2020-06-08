@@ -19,5 +19,10 @@ namespace UsedCarWebsite.API.Data
         public DbSet<Advert> Adverts { get; set; }
         //public DbSet<Car> Cars { get; set; }
         public DbSet<Photo> Photos { get; set; }
+        public DbSet<Colour> Colours { get; set; }
+        public DbSet<Transmission> Transmissions { get; set; }
+        public DbSet<Drive> Drives { get; set; }
+        public DbSet<Fuel> Fuels { get; set; }
+        public DbSet<BodyStyle> BodyStyles { get; set; }
     }
 }

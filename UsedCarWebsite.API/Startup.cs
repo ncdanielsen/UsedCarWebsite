@@ -55,7 +55,8 @@ namespace UsedCarWebsite.API
             services.Configure<CloudinarySettings>(Configuration.GetSection("CloudinarySettings"));
             services.AddAutoMapper(typeof(MainRepository).Assembly);
             services.AddScoped<IAuthRepository, AuthRepository>();
-            services.AddScoped<IMainRepository, MainRepository>(); 
+            services.AddScoped<IMainRepository, MainRepository>();
+            services.AddScoped<IValueRepository, ValueRepository>();
             services.AddAuthentication(JwtBearerDefaults.AuthenticationScheme)
                 .AddJwtBearer(options => options.TokenValidationParameters = new TokenValidationParameters
                 {

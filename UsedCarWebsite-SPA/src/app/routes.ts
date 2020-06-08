@@ -13,6 +13,7 @@ import { UserDetailResolver } from './_resolver/user-detail.resolver';
 import { AdvertEditComponent } from './adverts/advert-edit/advert-edit.component';
 import { UserPreventUnsavedChanges } from './_guards/user-prevent-unsaved-changes.guard';
 import { AdvertPreventUnsavedChanges } from './_guards/advert-prevent-unsaved-changes.guard';
+import { CarValueResolver } from './_resolver/carValues.resolver';
 
 export const appRoutes: Routes = [
     {path: 'home', component: HomeComponent},
@@ -23,13 +24,13 @@ export const appRoutes: Routes = [
         children: [
             {path: 'user', component: UserEditComponent,
             resolve: {user: UserDetailResolver}, canDeactivate: [UserPreventUnsavedChanges]},
-            {path: 'adverts/edit/:id', component: AdvertEditComponent, resolve: {advert: AdvertDetailResolver},
+            {path: 'adverts/edit/:id', component: AdvertEditComponent, resolve: {advert: AdvertDetailResolver, carValues: CarValueResolver},
             canDeactivate: [AdvertPreventUnsavedChanges]},
             {path: 'new-ad', component: NewAdComponent},
             {path: 'messages', component: MessagesComponent},
         ]
     },
-    {path: 'adverts', component: ListCarsComponent, resolve: {adverts: ListCarsResolver}},
+    {path: 'adverts', component: ListCarsComponent, resolve: {adverts: ListCarsResolver, carValues: CarValueResolver}},
     {path: 'adverts/:id', component: AdvertDetailComponent, resolve: {advert: AdvertDetailResolver}},
     {path: 'login', component: LoginComponent},
     {path: '**', redirectTo: 'home', pathMatch: 'full'}

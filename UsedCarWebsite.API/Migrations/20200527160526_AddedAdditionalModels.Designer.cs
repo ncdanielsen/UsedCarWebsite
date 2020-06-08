@@ -2,15 +2,17 @@
 using System;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 using UsedCarWebsite.API.Data;
 
 namespace UsedCarWebsite.API.Migrations
 {
     [DbContext(typeof(DataContext))]
-    partial class DataContextModelSnapshot : ModelSnapshot
+    [Migration("20200527160526_AddedAdditionalModels")]
+    partial class AddedAdditionalModels
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -93,21 +95,6 @@ namespace UsedCarWebsite.API.Migrations
                     b.HasIndex("UserId");
 
                     b.ToTable("Adverts");
-                });
-
-            modelBuilder.Entity("UsedCarWebsite.API.Models.BodyStyle", b =>
-                {
-                    b.Property<int>("Id")
-                        .ValueGeneratedOnAdd()
-                        .HasColumnType("INTEGER");
-
-                    b.Property<string>("BodyStyleType")
-                        .IsRequired()
-                        .HasColumnType("nvarchar(30)");
-
-                    b.HasKey("Id");
-
-                    b.ToTable("BodyStyles");
                 });
 
             modelBuilder.Entity("UsedCarWebsite.API.Models.Colour", b =>

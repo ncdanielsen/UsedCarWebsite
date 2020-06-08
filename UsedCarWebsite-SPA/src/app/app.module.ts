@@ -34,6 +34,8 @@ import { AdvertEditComponent } from './adverts/advert-edit/advert-edit.component
 import { UserPreventUnsavedChanges} from './_guards/user-prevent-unsaved-changes.guard';
 import { AdvertPreventUnsavedChanges } from './_guards/advert-prevent-unsaved-changes.guard';
 import { PhotoEditorComponent } from './adverts/photo-editor/photo-editor.component';
+import { CarValueResolver } from './_resolver/carValues.resolver';
+import { ValueService } from './_services/value.service';
 
 export function tokenGetter() {
    return localStorage.getItem('token');
@@ -93,10 +95,12 @@ export class CustomHammerConfig extends HammerGestureConfig {
       AuthService,
       ErrorInterceptorProvider,
       AdvertService,
+      ValueService,
       AuthGuard,
       UserPreventUnsavedChanges,
       AdvertPreventUnsavedChanges,
       AdvertDetailResolver,
+      CarValueResolver,
       ListCarsResolver,
       UserProfileResolver,
       UserDetailResolver,

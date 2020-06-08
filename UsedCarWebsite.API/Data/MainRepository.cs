@@ -45,7 +45,6 @@ namespace UsedCarWebsite.API.Data
         {
             var adverts = _context.Adverts.Where(a => a.AdvertStatus.ToLower() == "active").Include(p => p.Photos).Include(u => u.User).AsQueryable();
 
-            Console.WriteLine("ABIBVIABIVBAU " + advertParams.Make);
             if(advertParams.Make != null && advertParams.Make != "")
             {
                 adverts = adverts.Where(a => a.Make.ToLower().Contains(advertParams.Make.ToLower()));
@@ -56,7 +55,6 @@ namespace UsedCarWebsite.API.Data
             }
             if (advertParams.TransmissionType != null && advertParams.TransmissionType != "")
             {
-                Console.WriteLine("TRANSMISSION: " + advertParams.TransmissionType + " Something");
                 adverts = adverts.Where(a => a.TransmissionType.ToLower() == advertParams.TransmissionType.ToLower());
             }
             if (advertParams.FuelType != null && advertParams.FuelType != "")

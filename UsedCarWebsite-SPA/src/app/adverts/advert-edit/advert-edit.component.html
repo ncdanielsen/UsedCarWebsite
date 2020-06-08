@@ -36,24 +36,24 @@
     <div class="form-group">
       <label for="transmissionType">Transmission Type:</label>
       <select class="form-control" id="transmissionType" name="transmissionType" [(ngModel)]="advert.transmissionType">
-        <option *ngFor="let transmission of transmissionList" [value]="transmission.value">
-          {{transmission.display}}
+        <option *ngFor="let transmission of transmissionList" [value]="transmission.transmissionType">
+          {{transmission.transmissionType}}
         </option>
       </select>
     </div>
     <div class="form-group">
       <label for="driveType">Drive Type:</label>
       <select class="form-control" id="driveType" name="driveType" [(ngModel)]="advert.driveType">
-        <option *ngFor="let drive of driveList" [value]="drive.value">
-          {{drive.display}}
+        <option *ngFor="let drive of driveList" [value]="drive.driveType">
+          {{drive.driveType}}
         </option>
       </select>
     </div>
     <div class="form-group">
       <label for="fuelType">Fuel Type:</label>
       <select class="form-control" id="fuelType" name="fuelType" [(ngModel)]="advert.fuelType">
-        <option *ngFor="let fuel of fuelList" [value]="fuel.value">
-          {{fuel.display}}
+        <option *ngFor="let fuel of fuelList" [value]="fuel.fuelType">
+          {{fuel.fuelType}}
         </option>
       </select>
     </div>
@@ -65,16 +65,16 @@
     <div class="form-group">
       <label for="colour">Colour:</label>
       <select class="form-control" id="colour" name="colour" [(ngModel)]="advert.colour">
-        <option *ngFor="let colour of colourList" [value]="colour.value">
-          {{colour.display}}
+        <option *ngFor="let colour of colourList" [value]="colour.colourName">
+          {{colour.colourName}}
         </option>
       </select>
     </div>
     <div class="form-group">
       <label for="bodyStyle">Body Style:</label>
       <select class="form-control" id="bodyStyle" name="bodyStyle" [(ngModel)]="advert.bodyStyle">
-        <option *ngFor="let bodyStyle of bodyStyleList" [value]="bodyStyle.value">
-          {{bodyStyle.display}}
+        <option *ngFor="let bodyStyle of bodyStyleList" [value]="bodyStyle.bodyStyleType">
+          {{bodyStyle.bodyStyleType}}
         </option>
       </select>
     </div>
