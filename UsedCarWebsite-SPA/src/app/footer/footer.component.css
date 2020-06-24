@@ -1,0 +1,16 @@
+footer {
+    background-color: #46b8da;
+    margin-top: 5%;
+}
+
+.footer-copyright{
+    background-color: dimgrey;
+}
+
+a {
+    color: rgb(73, 73, 73);
+}
+
+.fileInput{
+    margin-bottom: 4rem;
+}

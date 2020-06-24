@@ -21,7 +21,7 @@ export class NewAdComponent implements OnInit {
 
   createRegisterForm() {
     this.advertRegisterForm = this.fb.group({
-      registerNumber: ['', [Validators.required, Validators.minLength(6), Validators.maxLength(16)]],
+      registerNumber: ['', [Validators.required, Validators.minLength(6), Validators.maxLength(12)]],
       make: ['', Validators.required],
       model: ['', Validators.required]
     });

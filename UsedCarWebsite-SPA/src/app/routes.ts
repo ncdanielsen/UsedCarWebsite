@@ -14,6 +14,7 @@ import { AdvertEditComponent } from './adverts/advert-edit/advert-edit.component
 import { UserPreventUnsavedChanges } from './_guards/user-prevent-unsaved-changes.guard';
 import { AdvertPreventUnsavedChanges } from './_guards/advert-prevent-unsaved-changes.guard';
 import { CarValueResolver } from './_resolver/carValues.resolver';
+import { AboutComponent } from './about/about.component';
 
 export const appRoutes: Routes = [
     {path: 'home', component: HomeComponent},
@@ -32,6 +33,7 @@ export const appRoutes: Routes = [
     },
     {path: 'adverts', component: ListCarsComponent, resolve: {adverts: ListCarsResolver, carValues: CarValueResolver}},
     {path: 'adverts/:id', component: AdvertDetailComponent, resolve: {advert: AdvertDetailResolver}},
+    {path: 'about', component: AboutComponent},
     {path: 'login', component: LoginComponent},
     {path: '**', redirectTo: 'home', pathMatch: 'full'}
 ];

@@ -94,4 +94,8 @@ export class AdvertEditComponent implements OnInit {
       });
     }
   }
+
+  backToAdvert() {
+    this.router.navigate(['/adverts/' +  this.advert.id]);
+  }
 }

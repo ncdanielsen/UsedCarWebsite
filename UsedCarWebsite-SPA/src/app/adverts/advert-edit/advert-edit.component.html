@@ -1,13 +1,14 @@
 <div class="container mt-3 mb-4">
-  <div class="alert alert-info" [hidden]="isActive()">
+  <button class="btn btn-primary" (click)="backToAdvert()">Back to advert</button>
+  <div class="alert alert-info mt-2" [hidden]="isActive()">
     <p><strong>Information:</strong> advert is currently inactive. Press the 'Make advert active' button when you are done filling out the form to make it visible to others</p>
   </div>
-  <div *ngIf="advertEditForm.dirty" class="alert alert-info">
+  <div *ngIf="advertEditForm.dirty" class="alert alert-info mt-2">
     <p><strong>Information:</strong> You have unsaved changes</p>
   </div>
 </div>
 <div id="advertEditContainer" class="container mt-3 mb-3">
-  <h2>Edit Advert</h2>
+  <h2 class="mt-4">Edit Advert</h2>
   <form id="advertEditForm" #advertEditForm="ngForm" (ngSubmit)="makeAdvertPublic()">
     <div class="form-group">
       <label for="registerNumber">Registration Number: </label>
@@ -30,9 +31,9 @@
       <label for="trim">Model Year:</label>
       <input class="form-control" type="number" required name="modelYear" [(ngModel)]="advert.modelYear">
     </div>
-    <h3>Divider</h3>
+    <h3>Photos</h3>
     <app-photo-editor [photos]="advert.photos" [advertId]="advert.id"></app-photo-editor>
-    <h3>Divider</h3>
+    <h3>Technical Specs</h3>
     <div class="form-group">
       <label for="transmissionType">Transmission Type:</label>
       <select class="form-control" id="transmissionType" name="transmissionType" [(ngModel)]="advert.transmissionType">
@@ -61,7 +62,11 @@
       <label for="horsePower">Horsepower:</label>
       <input class="form-control" type="text" name="horsePower" [(ngModel)]="advert.horsePower">
     </div>
-    <h3>Divider</h3>
+    <div class="form-group">
+      <label for="weight">Weight:</label>
+      <input class="form-control" type="number" name="weight" [(ngModel)]="advert.weight">
+    </div>
+    <h3>Colour & Bodystyle</h3>
     <div class="form-group">
       <label for="colour">Colour:</label>
       <select class="form-control" id="colour" name="colour" [(ngModel)]="advert.colour">
@@ -82,11 +87,7 @@
       <label for="seatNumber">Number of Seats:</label>
       <input class="form-control" type="number" name="seatNumber" [(ngModel)]="advert.seatNumber">
     </div>
-    <div class="form-group">
-      <label for="weight">Weight:</label>
-      <input class="form-control" type="number" name="weight" [(ngModel)]="advert.weight">
-    </div>
-    <h3>Divider</h3>
+    <h3>Advert Info</h3>
     <div class="form-group">
       <label for="title">Title:</label>
       <input class="form-control" type="text" name="title" required maxlength="100" [(ngModel)]="advert.title">
