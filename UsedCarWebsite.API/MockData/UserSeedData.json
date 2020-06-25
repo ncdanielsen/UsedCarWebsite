@@ -290,7 +290,7 @@
           },
           {
             "Url": "http://res.cloudinary.com/ekddjmgn6hh/image/upload/v1591629447/cqultpih9sshbjcvwaqu.jpg",
-            "IsMain": true,
+            "IsMain": false,
             "description": "A description"
           }
         ]
@@ -324,7 +324,7 @@
           },
           {
             "Url": "http://res.cloudinary.com/ekddjmgn6hh/image/upload/v1591095174/sg9mm3wumneb1d0rmspn.jpg",
-            "IsMain": true,
+            "IsMain": false,
             "description": "A description"
           }
         ]
@@ -358,7 +358,7 @@
           },
           {
             "Url": "http://res.cloudinary.com/ekddjmgn6hh/image/upload/v1591095174/sg9mm3wumneb1d0rmspn.jpg",
-            "IsMain": true,
+            "IsMain": false,
             "description": "A description"
           }
         ]
@@ -392,7 +392,7 @@
           },
           {
             "Url": "http://res.cloudinary.com/ekddjmgn6hh/image/upload/v1591629447/cqultpih9sshbjcvwaqu.jpg",
-            "IsMain": true,
+            "IsMain": false,
             "description": "A description"
           }
         ]
@@ -427,12 +427,12 @@
           },
           {
             "Url": "http://res.cloudinary.com/ekddjmgn6hh/image/upload/v1591629447/cqultpih9sshbjcvwaqu.jpg",
-            "IsMain": true,
+            "IsMain": false,
             "description": "A description"
           },
           {
             "Url": "http://res.cloudinary.com/ekddjmgn6hh/image/upload/v1591629447/cqultpih9sshbjcvwaqu.jpg",
-            "IsMain": true,
+            "IsMain": false,
             "description": "A description"
           }
         ]
