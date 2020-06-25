@@ -1,13 +1,5 @@
 [
   {
-    "Username": "Nils",
-    "Birthdate": "1995-05-10",
-    "Password": "password",
-    "Email": "example@email.com",
-    "Gender": "Male",
-    "Address": "Example Address"
-  },
-  {
     "Username": "John",
     "Birthdate": "1992-10-02",
     "Password": "password",
@@ -120,7 +112,7 @@
     "Address": "Example Address",
     "Adverts": [
       {
-        "Title": "Nice condition toyota corolla. Only serious callers, only accepting cash or bitcoin",
+        "Title": "Nice condition toyota corolla. Only serious callers",
         "Description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec varius ultrices libero, ac vestibulum felis finibus et. Aenean eu metus libero.",
         "Location": "882 Bouck Court, Austinburg, Maryland, 5174",
         "AdvertStatus": "Active",
@@ -148,7 +140,7 @@
         ]
       },
       {
-        "Title": "Nice condition toyota corolla. Only serious callers, only accepting cash or bitcoin",
+        "Title": "Nice condition toyota corolla. Only serious callers",
         "Description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec varius ultrices libero, ac vestibulum felis finibus et. Aenean eu metus libero.",
         "Location": "882 Bouck Court, Austinburg, Maryland, 5174",
         "AdvertStatus": "Active",
@@ -176,7 +168,7 @@
         ]
       },
       {
-        "Title": "Nice condition toyota corolla. Only serious callers, only accepting cash or bitcoin",
+        "Title": "Nice condition toyota corolla. Only serious callers.",
         "Description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec varius ultrices libero, ac vestibulum felis finibus et. Aenean eu metus libero.",
         "Location": "882 Bouck Court, Austinburg, Maryland, 5174",
         "AdvertStatus": "Active",
@@ -204,7 +196,7 @@
         ]
       },
       {
-        "Title": "Nice condition toyota corolla. Only serious callers, only accepting cash or bitcoin",
+        "Title": "Nice condition toyota corolla. Only serious callers.",
         "Description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec varius ultrices libero, ac vestibulum felis finibus et. Aenean eu metus libero.",
         "Location": "882 Bouck Court, Austinburg, Maryland, 5174",
         "AdvertStatus": "Inactive",
@@ -232,7 +224,7 @@
         ]
       },
       {
-        "Title": "Nice condition toyota corolla. Only serious callers, only accepting cash or bitcoin",
+        "Title": "Nice condition toyota corolla. Only serious callers.",
         "Description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec varius ultrices libero, ac vestibulum felis finibus et. Aenean eu metus libero.",
         "Location": "882 Bouck Court, Austinburg, Maryland, 5174",
         "AdvertStatus": "Expired",
@@ -254,6 +246,192 @@
         "Photos": [
           {
             "Url": "https://image-cdn.beforward.jp/large/201808/1039626/BF948723_470856.jpg",
+            "IsMain": true,
+            "description": "A description"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "Username": "Nils",
+    "Birthdate": "1987-5-19",
+    "Password": "password",
+    "Email": "example@email.com",
+    "Gender": "Male",
+    "Address": "Example Address",
+    "Adverts": [
+      {
+        "Title": "Selling my old Opel. Very reliable car",
+        "Description": "Selling my old trusty Opel Omega. Bought in 2002 with the top level trim.",
+        "ContactInfo": "Tlf: 55544555",
+        "Location": "Moss",
+        "AdvertStatus": "Active",
+        "Price": "30000",
+        "Make": "Opel",
+        "Model": "Omega",
+        "Trim": "",
+        "ModelYear": "2001",
+        "Colour": "Black",
+        "SeatNumber": "5",
+        "FuelType": "Petrol",
+        "HorsePower": "144",
+        "Weight": "1530",
+        "TransmissionType": "Manual",
+        "DriveType": "RWD",
+        "BodyStyle": "Sedan",
+        "Mileage": "150000",
+        "Registernumber": "NO309351",
+        "Photos": [
+          {
+            "Url": "http://res.cloudinary.com/ekddjmgn6hh/image/upload/v1591629447/cqultpih9sshbjcvwaqu.jpg",
+            "IsMain": true,
+            "description": "A description"
+          },
+          {
+            "Url": "http://res.cloudinary.com/ekddjmgn6hh/image/upload/v1591629447/cqultpih9sshbjcvwaqu.jpg",
+            "IsMain": true,
+            "description": "A description"
+          }
+        ]
+      },
+      {
+        "Title": "Brand new 2020 Hyundai Ioniq Premium",
+        "Description": "New 2020 Hyundai Ioniq Premium with all the options selected. This is the top level trim with all the extras.",
+        "ContactInfo": "Tlf: A telephone number",
+        "Location": "Fredrikstad",
+        "AdvertStatus": "Active",
+        "Price": "309999",
+        "Make": "Hyundai",
+        "Model": "Ioniq",
+        "Trim": "Premium",
+        "ModelYear": "2020",
+        "Colour": "Grey",
+        "SeatNumber": "5",
+        "FuelType": "Electric",
+        "HorsePower": "105",
+        "Weight": "1495",
+        "TransmissionType": "Automatic",
+        "DriveType": "AWD",
+        "BodyStyle": "Sedan",
+        "Mileage": "1000",
+        "Registernumber": "EL2429872",
+        "Photos": [
+          {
+            "Url": "http://res.cloudinary.com/ekddjmgn6hh/image/upload/v1591095174/sg9mm3wumneb1d0rmspn.jpg",
+            "IsMain": true,
+            "description": "A description"
+          },
+          {
+            "Url": "http://res.cloudinary.com/ekddjmgn6hh/image/upload/v1591095174/sg9mm3wumneb1d0rmspn.jpg",
+            "IsMain": true,
+            "description": "A description"
+          }
+        ]
+      },
+      {
+        "Title": "Brand new 2020 Hyundai Ioniq Premium",
+        "Description": "New 2020 Hyundai Ioniq Premium with all the options selected. This is the top level trim with all the extras.",
+        "ContactInfo": "Tlf: A telephone number",
+        "Location": "Fredrikstad",
+        "AdvertStatus": "Active",
+        "Price": "309999",
+        "Make": "Hyundai",
+        "Model": "Ioniq",
+        "Trim": "Premium",
+        "ModelYear": "2020",
+        "Colour": "Grey",
+        "SeatNumber": "5",
+        "FuelType": "Electric",
+        "HorsePower": "105",
+        "Weight": "1495",
+        "TransmissionType": "Automatic",
+        "DriveType": "AWD",
+        "BodyStyle": "Sedan",
+        "Mileage": "1000",
+        "Registernumber": "EL2429872",
+        "Photos": [
+          {
+            "Url": "http://res.cloudinary.com/ekddjmgn6hh/image/upload/v1591095174/sg9mm3wumneb1d0rmspn.jpg",
+            "IsMain": true,
+            "description": "A description"
+          },
+          {
+            "Url": "http://res.cloudinary.com/ekddjmgn6hh/image/upload/v1591095174/sg9mm3wumneb1d0rmspn.jpg",
+            "IsMain": true,
+            "description": "A description"
+          }
+        ]
+      },
+      {
+        "Title": "Selling my old Opel. Very reliable car",
+        "Description": "Selling my old trusty Opel Omega. Bought in 2002 with the top level trim.",
+        "ContactInfo": "Tlf: 55544555",
+        "Location": "Moss",
+        "AdvertStatus": "Active",
+        "Price": "30000",
+        "Make": "Opel",
+        "Model": "Omega",
+        "Trim": "",
+        "ModelYear": "2001",
+        "Colour": "Black",
+        "SeatNumber": "5",
+        "FuelType": "Petrol",
+        "HorsePower": "144",
+        "Weight": "1530",
+        "TransmissionType": "Manual",
+        "DriveType": "RWD",
+        "BodyStyle": "Sedan",
+        "Mileage": "150000",
+        "Registernumber": "NO309351",
+        "Photos": [
+          {
+            "Url": "http://res.cloudinary.com/ekddjmgn6hh/image/upload/v1591629447/cqultpih9sshbjcvwaqu.jpg",
+            "IsMain": true,
+            "description": "A description"
+          },
+          {
+            "Url": "http://res.cloudinary.com/ekddjmgn6hh/image/upload/v1591629447/cqultpih9sshbjcvwaqu.jpg",
+            "IsMain": true,
+            "description": "A description"
+          }
+        ]
+      },
+
+      {
+        "Title": "Selling my old Opel. Very reliable car",
+        "Description": "Selling my old trusty Opel Omega. Bought in 2002 with the top level trim.",
+        "ContactInfo": "Tlf: 55544555",
+        "Location": "Moss",
+        "AdvertStatus": "Active",
+        "Price": "30000",
+        "Make": "Opel",
+        "Model": "Omega",
+        "Trim": "",
+        "ModelYear": "2001",
+        "Colour": "Black",
+        "SeatNumber": "5",
+        "FuelType": "Petrol",
+        "HorsePower": "144",
+        "Weight": "1530",
+        "TransmissionType": "Manual",
+        "DriveType": "RWD",
+        "BodyStyle": "Sedan",
+        "Mileage": "150000",
+        "Registernumber": "NO309351",
+        "Photos": [
+          {
+            "Url": "http://res.cloudinary.com/ekddjmgn6hh/image/upload/v1591629447/cqultpih9sshbjcvwaqu.jpg",
+            "IsMain": true,
+            "description": "A description"
+          },
+          {
+            "Url": "http://res.cloudinary.com/ekddjmgn6hh/image/upload/v1591629447/cqultpih9sshbjcvwaqu.jpg",
+            "IsMain": true,
+            "description": "A description"
+          },
+          {
+            "Url": "http://res.cloudinary.com/ekddjmgn6hh/image/upload/v1591629447/cqultpih9sshbjcvwaqu.jpg",
             "IsMain": true,
             "description": "A description"
           }

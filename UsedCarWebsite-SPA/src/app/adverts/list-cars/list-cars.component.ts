@@ -26,24 +26,6 @@ export class ListCarsComponent implements OnInit {
   fuelList: FuelType[];
   bodyStyleList: BodyStyle[];
 
-  /*
-  transmissionList = [{value: 'manual', display: 'Manual'}, {value: 'automatic', display: 'Automatic'}];
-
-  driveList = [{value: 'fwd', display: 'FWD'}, {value: 'rwd', display: 'RWD'},
-  {value: 'awd', display: 'AWD'}];
-  fuelList = [{value: 'petrol', display: 'Petrol'}, {value: 'diesel', display: 'Diesel'},
-  {value: 'electric', display: 'Electric'}];
-  colourList = [{value: 'blue', display: 'Blue'}, {value: 'grey', display: 'Grey'},
-  {value: 'red', display: 'Red'}, {value: 'white', display: 'White'},
-  {value: 'black', display: 'Black'}, {value: 'silver', display: 'Silver'},
-  {value: 'other', display: 'Other'}];
-  bodyStyleList = [{value: 'coupe', display: 'Coupe'}, {value: 'sedan', display: 'Sedan'},
-  {value: 'hatchback', display: 'Hatchback'}, {value: 'suv', display: 'SUV'},
-  {value: 'wagon', display: 'Wagon'}, {value: 'convertible', display: 'Convertible'},
-  {value: 'other', display: 'Other'}];
-  */
-
-
   constructor(private advertService: AdvertService, private route: ActivatedRoute) { }
 
   ngOnInit() {
