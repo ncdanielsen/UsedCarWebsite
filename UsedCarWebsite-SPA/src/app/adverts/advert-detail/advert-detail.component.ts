@@ -68,7 +68,11 @@ export class AdvertDetailComponent implements OnInit {
 
   isOwner() {
     // tslint:disable-next-line: triple-equals
-    return this.advert.userId == this.authService.currentUser();
+    if (this.authService.loggedIn()) {
+      return (this.advert.userId === this.authService.currentUser());
+    } else {
+      return false;
+    }
   }
 
   isActive() {

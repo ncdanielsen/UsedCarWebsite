@@ -38,6 +38,7 @@ loggedIn() {
 currentUser() {
   const token = localStorage.getItem('token');
   this.decodedToken = this.jwtHelper.decodeToken(token);
+  console.log(this.decodedToken);
   return this.decodedToken.nameid;
 }
 

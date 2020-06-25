@@ -41,10 +41,6 @@ export class ListCarsComponent implements OnInit {
     this.fuelList = this.carValues.fuelTypes;
     this.bodyStyleList = this.carValues.bodyStyles;
 
-    this.transmissionList.forEach(element => {
-      console.log(element);
-    });
-
     this.advertParams.make = '';
     this.advertParams.model = '';
     this.advertParams.transmissionType = '';

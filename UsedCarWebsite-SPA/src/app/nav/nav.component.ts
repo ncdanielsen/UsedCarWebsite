@@ -23,6 +23,7 @@ export class NavComponent implements OnInit {
     localStorage.removeItem('token');
     this.router.navigate(['/home']);
     console.log('logged out');
+    this.router.navigate(['/home']);
   }
 
 }
